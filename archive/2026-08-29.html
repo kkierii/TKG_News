@@ -1,0 +1,264 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The Known Good News — August 29, 2026</title><meta name="description" content="The Known Good News for Saturday, August 29, 2026: GPUThor Rowhammer Attack Defeats ECC on Four NVIDIA Ampere Workstation GPUs"></head><body style="margin:0;background:#eef1f4;">
+<!--
+  THE KNOWN GOOD NEWS — LOCKED TEMPLATE v1
+  640px table layout, inline CSS, email-safe. Masthead = hosted PNG banner.
+  Daily generation swaps content only. Do not change layout, colors, or fonts.
+-->
+<table width="100%" cellpadding="0" cellspacing="0" style="margin:0;padding:0;">
+ <tr>
+  <td align="center" bgcolor="#eef1f4" style="padding:18px 10px;">
+
+   <table width="640" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="width:640px;max-width:640px;border:1px solid #d5dae0;">
+
+    <!-- ===== MASTHEAD ===== -->
+    <tr>
+     <td bgcolor="#0B1220" style="padding:0;font-size:0;line-height:0;">
+      <img src="https://raw.githubusercontent.com/kkierii/TKG_News/main/images/TKG_Banner.png" width="640" alt="The Known Good News — daily AI intelligence brief covering models, AI security, policy, chips and infrastructure, research, and incidents" style="display:block;width:100%;max-width:640px;height:auto;border:0;" />
+     </td>
+    </tr>
+
+    <!-- ===== DATE BAR + EDITOR NOTE ===== -->
+    <tr>
+     <td bgcolor="#f2f5f8" style="padding:11px 26px;border-top:3px solid #0271B8;border-bottom:1px solid #dde3e9;">
+      <table width="100%" cellpadding="0" cellspacing="0">
+       <tr>
+        <td style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0B1220;">Friday, August 28, 2026</td>
+        <td align="right" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#5a6472;">Test Edition</td>
+       </tr>
+      </table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;padding-top:6px;">ECC was the answer to GPU Rowhammer until this week, two men in Perth are charged over the scanner that scanned itself, and AI&rsquo;s power bill is now negotiated in gigawatts and decades &mdash; the first of the three has no patch and no CVE.</div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:26px 26px 6px 26px;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;letter-spacing:1px;color:#0B1220;text-transform:uppercase;border-bottom:2px solid #0B1220;padding-bottom:6px;">Featured</div>
+     </td>
+    </tr>
+    <tr>
+     <td bgcolor="#f4f7fa" style="padding:14px 26px 22px 26px;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#0271B8" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Breaking</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:19px;font-weight:bold;color:#0B1220;line-height:1.3;padding:10px 0 4px 0;">GPUThor Rowhammer Attack Defeats ECC on Four NVIDIA Ampere Workstation GPUs</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:8px;">The Hacker News, reporting University of Toronto research &middot; 27 August 2026</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#2b3138;line-height:1.55;">University of Toronto researchers disclosed GPUThor, a non-uniform Rowhammer technique that induces bit flips on NVIDIA GDDR6 workstation GPUs and defeats the SECDED error correction that NVIDIA recommends as the mitigation for GPU Rowhammer. Four cards were tested and found vulnerable &mdash; the RTX A6000 at 48GB, RTX A5000 at 24GB, RTX A4500 at 20GB and RTX A4000 at 16GB &mdash; producing between 72,000 and 377,000 bit flips per gigabyte with ECC disabled, the A5000 highest at 377,552 per gigabyte; at 16-byte granularity the campaigns produced 387 double-bit and two triple-bit flips. With ECC enabled on an RTX A6000, one bank of hammering produced 11 detectable-uncorrectable errors and one silent data corruption over 24 hours, and the researchers reached a root shell on the host using the triple-bit corruption with the IOMMU enabled, and host-side privilege escalation via a double-bit error where the IOMMU is disabled. The attack requires only the ability to launch an unprivileged CUDA kernel on the target GPU, carries no CVE identifier and has no patch; it was reported to NVIDIA on April 29, 2026 under an embargo that lifted August 25, and no bit flips were observed on the A10, L4, L40, RTX 4090 or the HBM2e-based A30. Exploit code is scheduled for public release on November 15, 2026 at ACM CCS.</div>
+      <div style="padding-top:12px;"><a href="https://thehackernews.com/2026/08/gputhor-rowhammer-defeats-ecc-on-nvidia.html" style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#0271B8;text-decoration:none;">Read the disclosure &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <!-- ===== THE BRIEF ===== -->
+    <tr>
+     <td style="padding:26px 26px 6px 26px;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;letter-spacing:1px;color:#0B1220;text-transform:uppercase;border-bottom:2px solid #0B1220;padding-bottom:6px;">The Brief</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:6px;line-height:1.5;">Models &amp; Releases &middot; AI Security &middot; Policy &amp; Regulation &middot; Chips &amp; Infrastructure &middot; Research &middot; Incidents</div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Incidents</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">Attackers Chain Two PaperCut Flaws for Unauthenticated Code Execution</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">The Hacker News, reporting watchTowr and Huntress findings</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">PaperCut published an August 27, 2026 security bulletin covering two vulnerabilities in PaperCut NG and PaperCut MF: CVE-2026-82078, carrying a CVSS score of 9.4, an unsafe dynamic class loading condition in the database connection utilities that instantiates driver classes from configurable names without an allowlist; and CVE-2026-81578 at CVSS 8.8, an access control failure in the web management interface where unauthenticated remote requests reach administrative functions before validation completes. watchTowr reports attackers chaining the two &mdash; CVE-2026-81578 to bypass authentication, then a configuration file edit to trigger CVE-2026-82078 for remote code execution &mdash; and PaperCut states the issue affects all versions of NG and MF, with emergency patches for v25 and v26 followed by a second hardening patch. Huntress observed exploitation in two customer environments, with attackers running Base64-encoded <span style="font-family:Courier,monospace;">whoami &amp; ver</span> commands and dropping an OS-agnostic Java class file that writes a directory listing to <span style="font-family:Courier,monospace;">Udydn.out</span> before deleting that file, <span style="font-family:Courier,monospace;">server.log</span> and <span style="font-family:Courier,monospace;">derby.log</span>. watchTowr also reports further patch bypasses affecting the latest fully patched version; one caveat on sourcing, the vendor bulletin page returned navigation chrome only when fetched, so the version and CVSS figures above trace to this reporting rather than to the vendor page directly.</div>
+      <div style="padding-top:8px;"><a href="https://thehackernews.com/2026/08/attackers-chain-two-papercut-flaws-to.html" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Incidents</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">Australian Police Charge Two Over the TeamPCP Compromises of Trivy, KICS and LiteLLM</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">The Hacker News; Help Net Security</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">The Australian Federal Police, working with the FBI and Western Australia Police Force, charged two Western Australian men aged 21 and 23 with a combined 14 offences over their alleged role in TeamPCP, the group behind the March 2026 compromise of the open-source scanners Trivy and Checkmarx KICS and the AI gateway LiteLLM; both were arrested August 26 and appeared in Perth Magistrates Court on August 27, 2026. The AFP said the malicious code potentially compromised more than 1,000 organisations globally, enabled theft of more than 500,000 credentials and led to exfiltration of at least 300 gigabytes of data, with global remediation costs estimated in the hundreds of millions of dollars. The compromises cascaded: credentials stolen via Trivy were used against Checkmarx KICS days later, and because LiteLLM&rsquo;s build pipeline installed Trivy without pinning it to a verified version, the poisoned scanner captured LiteLLM&rsquo;s publishing token, which was used to push backdoored LiteLLM releases in late March. A July 2 FBI advisory advises rotating all CI/CD secrets, publishing tokens and cloud credentials, searching for repositories named <span style="font-family:Courier,monospace;">tpcp-docs</span> and <span style="font-family:Courier,monospace;">docs-tpcp</span>, and pinning GitHub Actions workflows to commit SHA hashes.</div>
+      <div style="padding-top:8px;"><a href="https://thehackernews.com/2026/08/alleged-teampcp-hackers-charged-in.html" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Chips &amp; Infrastructure</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">Anthropic Reported to Sign a $45 Billion, 460MW Compute Agreement With Nscale</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">DataCenterDynamics, reporting Bloomberg</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">Anthropic has signed a $45 billion AI cloud capacity agreement with the neocloud provider Nscale, according to Bloomberg reporting dated August 26, 2026 and carried by DataCenterDynamics on August 27. The deal covers 460MW leased over six years at Nscale&rsquo;s Monarch Compute Campus in West Virginia, running NVIDIA Vera Rubin chips expected to come online late in 2027. Nscale acquired the 2,250-acre site in March 2026; it carries potential capacity of up to 8GW, with a first phase of 2GW targeted for the first half of 2028 and power supplied by Caterpillar G3500-series natural gas gensets. Microsoft has separately contracted for 1.35GW at the same campus, and Nscale is preparing a United States IPO reportedly targeting around $3 billion. One sourcing caveat worth stating plainly: this is Bloomberg citing people familiar with the agreement, and DataCenterDynamics notes it has contacted Nscale for confirmation &mdash; neither company has confirmed the contract on the record.</div>
+      <div style="padding-top:8px;"><a href="https://www.datacenterdynamics.com/en/news/anthropic-signs-45bn-compute-capacity-agreement-with-nscale-report/" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Chips &amp; Infrastructure</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">Georgia Regulators Approve a 3.2GW Power Contract for a Planned OpenAI Data Center</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">DataCenterDynamics</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">The Georgia Public Service Commission has approved a power supply contract between Georgia Power and OpenAI to serve a planned data center campus in Effingham County, Georgia, reported August 27, 2026. Georgia Power will develop 3.2GW of new generation, with OpenAI committing to pay the full cost of the infrastructure required to serve the site; the type of generating capacity has not been disclosed. OpenAI will also provide up to 1GW of flexible demand response, and Georgia Power expects to begin delivering energy between 2028 and 2032. The campus sits within the 2,600-acre Savannah Gateway Industrial Hub, is planned as four buildings totalling 4.4 million square feet, is expected to represent more than $30 billion of OpenAI investment, and uses a closed-loop water cooling system.</div>
+      <div style="padding-top:8px;"><a href="https://www.datacenterdynamics.com/en/news/openai-gets-green-light-for-32gw-power-deal-to-supply-planned-data-center-in-effingham-county-georgia/" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Models &amp; Releases</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">Z.ai Releases GLM-5.3 Open Weights, a 753 Billion Parameter Post-Training Update</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">Hugging Face model card</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">Z.ai published GLM-5.3 to Hugging Face on August 28, 2026, a 753 billion parameter mixture-of-experts model released under a custom glm-5.3 licence, alongside GLM-5.3-Flash the previous day. The model card states GLM-5.3 uses the same base model as GLM-5.2 and that all gains come from post-training, reporting Terminal Bench 3.0 at 28.3 against GLM-5.2&rsquo;s 4.6, DeepSWE v1.1 at 66.9 against 46.2, and Terminal Bench 2.1 at 88.2 against 81.0. Z.ai also reports 84.5 on CyberGym vulnerability discovery, measured single-run pass@1 across 1,507 tasks, and 54.4 on ExploitBench against GLM-5.2&rsquo;s 24.4, describing the cyber-capability gains as unexpected during post-training scaling. On the card&rsquo;s own tables GPT-5.6 Sol still leads Terminal Bench 3.0 at 34.6 and ExploitBench at 76.5, while GLM-5.3 tops GDPval-AA v2 at 1769; deployment recipes are listed for SGLang, vLLM, Transformers, KTransformers and Ascend NPU.</div>
+      <div style="padding-top:8px;"><a href="https://huggingface.co/zai-org/GLM-5.3" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Models &amp; Releases</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">Qwen Open-Weights Qwen3.8-Flash-Next, a Preview of the Qwen4 Architecture</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">Hugging Face model card</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">Alibaba&rsquo;s Qwen team released Qwen3.8-Flash-Next on Hugging Face under the qwen-community-1.0 licence, described on the model card as an experimental preview of the architecture that will underpin Qwen4; the repository was last updated August 27, 2026. The language model carries 125 billion parameters with 6 billion activated, plus 51 billion n-gram embedding parameters and 4 billion for multi-token prediction, totalling 180 billion on disk, across 48 layers with 512 experts using top-8 routing plus one shared expert, and a native 262,144-token context extensible to one million via YaRN. Architectural changes include replacing gated attention with Qwen Sparse Attention operating at micro-block level, a gated residual mechanism across four branches, and a 20 million entry bigram and trigram embedding table indexed at layer 2. Reported scores include 62.5 on SWE-bench Pro, 81.0 on SWE-bench Multilingual, 91.7 on GPQA Diamond, 91.9 on LiveCodeBench v6 and 35.9 on Humanity&rsquo;s Last Exam.</div>
+      <div style="padding-top:8px;"><a href="https://huggingface.co/Qwen/Qwen3.8-Flash-Next" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Policy &amp; Regulation</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">Delaware Enacts Four Bills Making Large Energy Users Supply Their Own Power</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">WGMD; WHYY; Delaware General Assembly bill text</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">Delaware Governor Matt Meyer signed four energy bills into law on August 26, 2026, all effective immediately. HB 445 establishes a bring-your-own-generation requirement obliging large energy-use facilities to produce or secure 100 percent of their required power, including a share of clean or renewable energy; the bill&rsquo;s synopsis requires operators to file a ramp-up plan with the Public Service Commission and reach 100 percent in-state production by their tenth year of operation. HB 233 creates a separate utility rate class for large energy-use facilities, requires them to pay the full cost of transmission, distribution and capacity procurement, and prioritises them for curtailment during grid emergencies unless they supply their own generation. HB 310 bars such facilities from job-creation tax credits and licence-fee reductions, and SB 326 increases oversight of non-mandatory capital spending by for-profit monopoly utilities. Delaware currently hosts roughly 19 data centers, though a 1.2GW campus is proposed by Starwood in New Castle.</div>
+      <div style="padding-top:8px;"><a href="https://legis.delaware.gov/BillDetail?LegislationId=143386" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Research</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">TTPO Proposes Label-Free Test-Time Training for Math Reasoning</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">arXiv</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">A team led by authors at Zhejiang University posted Test-Time Policy Optimization to arXiv on August 27, 2026, addressing the fact that reinforcement learning and on-policy self-distillation both require ground-truth labels and so cannot be used for test-time training. The paper reports that rollouts disagreeing with a majority-vote pseudo-label are typically wrong regardless of whether the vote itself is correct, and builds an asymmetric objective that distills agreeing rollouts while penalising disagreeing ones with grouped reinforcement learning, adding token-level selection that down-weights already-converged positions and penalises only confident errors. Without labels, the authors report TTPO matching label-supervised self-distillation on five competition-level benchmarks and raising Qwen3-1.7B from 38.0 percent to 45.2 percent under test-time training, with gains of 25.2 to 36.4 percent in non-thinking mode. Code and a project page are listed, and the paper is released under CC BY 4.0.</div>
+      <div style="padding-top:8px;"><a href="https://arxiv.org/abs/2608.27448" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <!-- ===== MOVERS ===== -->
+    <tr>
+     <td style="padding:26px 26px 6px 26px;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;letter-spacing:1px;color:#0B1220;text-transform:uppercase;border-bottom:2px solid #0B1220;padding-bottom:6px;">Movers &mdash; From The Known Good</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:6px;line-height:1.5;">Net price moves across the tracked catalogue, 28 August. Same-day round trips are excluded &mdash; only clean directional moves appear here. Green means cheaper.</div>
+     </td>
+    </tr>
+    <tr>
+     <td style="padding:14px 26px 4px 26px;">
+      <table width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #e4e8ed;">
+       <tr bgcolor="#f2f5f8">
+        <td style="padding:8px 10px;font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:bold;color:#5a6472;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid #e4e8ed;">Model</td>
+        <td style="padding:8px 10px;font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:bold;color:#5a6472;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid #e4e8ed;">Metric</td>
+        <td align="right" style="padding:8px 10px;font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:bold;color:#5a6472;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid #e4e8ed;">Change</td>
+       </tr>
+       <tr>
+        <td style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#0B1220;border-bottom:1px solid #eef1f4;">Qwen: Qwen3.8 2.4T A95B (batch)</td>
+        <td style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;border-bottom:1px solid #eef1f4;">Blended $/1M &middot; $3.44 &rarr; $3.00</td>
+        <td align="right" style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#0a7d4b;border-bottom:1px solid #eef1f4;">&minus;13%</td>
+       </tr>
+       <tr>
+        <td style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#0B1220;border-bottom:1px solid #eef1f4;">Mistral: Mistral Medium 3.5 (batch)</td>
+        <td style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;border-bottom:1px solid #eef1f4;">Added 28 Aug &middot; 262,144 ctx &middot; $1.50</td>
+        <td align="right" style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#0271B8;border-bottom:1px solid #eef1f4;">New</td>
+       </tr>
+       <tr>
+        <td style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#0B1220;border-bottom:1px solid #eef1f4;">Mistral: Mistral Large 3 2512 (batch)</td>
+        <td style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;border-bottom:1px solid #eef1f4;">Added 28 Aug &middot; 262,144 ctx &middot; $0.75</td>
+        <td align="right" style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#0271B8;border-bottom:1px solid #eef1f4;">New</td>
+       </tr>
+       <tr>
+        <td style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#0B1220;border-bottom:1px solid #eef1f4;">Mistral: Codestral 2508 (batch)</td>
+        <td style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;border-bottom:1px solid #eef1f4;">Added 28 Aug &middot; 256,000 ctx &middot; $0.45</td>
+        <td align="right" style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#0271B8;border-bottom:1px solid #eef1f4;">New</td>
+       </tr>
+       <tr>
+        <td style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#0B1220;border-bottom:1px solid #eef1f4;">Mistral: Mistral Medium 3.1 (batch)</td>
+        <td style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;border-bottom:1px solid #eef1f4;">Added 28 Aug &middot; 131,072 ctx &middot; $0.80</td>
+        <td align="right" style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#0271B8;border-bottom:1px solid #eef1f4;">New</td>
+       </tr>
+       <tr>
+        <td style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#0B1220;border-bottom:1px solid #eef1f4;">Mistral: Mistral Small 4 (batch)</td>
+        <td style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;border-bottom:1px solid #eef1f4;">Added 28 Aug &middot; 262,144 ctx &middot; $0.2625</td>
+        <td align="right" style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#0271B8;border-bottom:1px solid #eef1f4;">New</td>
+       </tr>
+       <tr>
+        <td style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#0B1220;border-bottom:1px solid #eef1f4;">Mistral: Ministral 3 8B 2512 (batch)</td>
+        <td style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;border-bottom:1px solid #eef1f4;">Added 28 Aug &middot; 262,144 ctx &middot; $0.15</td>
+        <td align="right" style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#0271B8;border-bottom:1px solid #eef1f4;">New</td>
+       </tr>
+      </table>
+      <div style="padding-top:10px;"><a href="https://theknowngood.com/leaderboard" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">See the full leaderboard &rsaquo;</a></div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:10px;line-height:1.55;">Thirty-one price changes across ten models fell in the 28 August window, and they produced exactly one clean directional move. What was withheld matters more than the table. Two are held because this brief published them at 06:00 this morning: DeepSeek V4 Flash 0423 at +18%, and DeepSeek V4 Flash 0731, whose three further legs today end at $0.08, a price it already held. Three round-tripped to exactly 0% and are two-state oscillators besides &mdash; Tencent Hy3 ran $0.14 to $0.23 and back with no other price in its recorded history; Qwen3.6 27B ran $1.35 to $1.04 and back inside a band it has never left; DeepSeek V4 Flash Vision Exp alternated $0.33 and $0.66 across four legs. Qwen3.5-122B-A10B reads +14%, but its entire history alternates between exactly $0.72 and $0.82 and today merely returns it to $0.82. NVIDIA Nemotron 3.5 Lightning reads +25% back to $0.14, the only other price it has ever held, and was withheld on that same ground this morning. DeepSeek V4 Pro 0813 took five legs today, three of them $0.99-to-$1.98 flapping, so its net depends entirely on which side the flapping stopped. Two more fail a cross-check rather than a filter: Z.ai GLM Latest reads &minus;100% to $0.00, but the catalogue still prices it at $2.0375 blended &mdash; an ingest artifact, not a price cut, and we will not print a free model that is not free; DeepSeek V4 Pro 0423 reads &minus;10% from $1.09 to $0.98, but the catalogue&rsquo;s blended value is $0.9398 and &minus;10% cannot be recovered from either pairing, so it is held pending reconciliation. That leaves Qwen3.8 2.4T A95B (batch): one directional move, to a price it has not held before, and the catalogue agrees at exactly $3.00 &mdash; though it was also first tracked today, so this is a new listing settling rather than an established endpoint repricing. The six Mistral batch endpoints each reconcile against the catalogue; Mistral Small 4 carries $0.2625 there and is shown unrounded. Standing caution on arithmetic: the changelog displays prices rounded to two decimals but computes percentages on unrounded values, so dividing the two figures in a row will not reproduce the percentage beside it. Every percentage here is the site&rsquo;s own.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#8a93a0;padding-top:8px;line-height:1.5;">Data as of 28 Aug 2026, 18:30 UTC, covering 1,045 tracked models. Source: The Known Good (CC BY 4.0), https://theknowngood.com &mdash; price data via OpenRouter, benchmark data includes Epoch AI (CC BY). Net moves are computed by chaining every changelog entry per model across the window and publishing only the endpoint-to-endpoint result.</div>
+     </td>
+    </tr>
+
+    <!-- ===== SKILL UP — FREE TRAINING ===== -->
+    <tr>
+     <td style="padding:26px 26px 6px 26px;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;letter-spacing:1px;color:#0B1220;text-transform:uppercase;border-bottom:2px solid #0B1220;padding-bottom:6px;">Skill Up &mdash; Free Training</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:6px;line-height:1.5;">Tied to today&rsquo;s topics. Genuinely free courses from reputable sources; access terms noted per course. <strong style="color:#5a6472;">Not endorsements.</strong> We accept no payment for placement or coverage, and use no affiliate links.</div>
+     </td>
+    </tr>
+    <tr>
+     <td style="padding:14px 26px;border-bottom:1px solid #e4e8ed;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#0B1220;">Securing Your Software Supply Chain with Sigstore (LFS182)</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding:2px 0 4px 0;">Linux Foundation Education &middot; Free (digital badge included)</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.5;">Eight hours on the Sigstore toolchain &mdash; Cosign, Fulcio, Rekor, Gitsign and the Kubernetes Policy Controller &mdash; for signing and verifying containers, build artifacts and Git commits, with labs that assume familiarity with CI/CD. It is the direct answer to the LiteLLM failure mode: an unpinned dependency that captured a publishing token.</div>
+      <div style="padding-top:8px;"><a href="https://training.linuxfoundation.org/training/securing-your-software-supply-chain-with-sigstore-lfs182/" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Open course &rsaquo;</a></div>
+     </td>
+    </tr>
+    <tr>
+     <td style="padding:14px 26px;border-bottom:1px solid #e4e8ed;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#0B1220;">How to Run Open Source LLMs Locally and in the Cloud</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding:2px 0 4px 0;">freeCodeCamp &middot; Free (no certificate offered)</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.5;">A video course on working with open-weight models across local machines and cloud hosts, including the VRAM and hardware limits that push large-context workloads off local GPUs, plus benchmarking and coding-harness comparisons. Useful context for what a 753 billion parameter release like GLM-5.3 actually requires to serve. It covers sizing and hosting generally rather than vLLM or SGLang specifically.</div>
+      <div style="padding-top:8px;"><a href="https://www.freecodecamp.org/news/how-to-run-open-source-llms-locally-and-in-the-cloud/" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Open course &rsaquo;</a></div>
+     </td>
+    </tr>
+    <tr>
+     <td style="padding:14px 26px;border-bottom:1px solid #e4e8ed;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#0B1220;">Engineering, Economics and Regulation of the Electric Power Sector</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding:2px 0 4px 0;">MIT OpenCourseWare &middot; Free (Creative Commons; no certificate offered)</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.5;">A graduate course tying power system engineering to its economics and regulation: generation dispatch, demand response, optimal network flows, reliability, ancillary services, tariff design and distributed generation. Those are precisely the levers Delaware just pulled and the ones behind a 3.2GW Georgia approval. Taught Spring 2010, so it teaches the framework rather than current cases.</div>
+      <div style="padding-top:8px;"><a href="https://ocw.mit.edu/courses/ids-505j-engineering-economics-and-regulation-of-the-electric-power-sector-spring-2010/" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Open course &rsaquo;</a></div>
+     </td>
+    </tr>
+    <tr>
+     <td style="padding:14px 26px;border-bottom:1px solid #e4e8ed;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#0B1220;">Deep Reinforcement Learning Course</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding:2px 0 4px 0;">Hugging Face &middot; Free (certification process free)</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.5;">Q-learning through Deep Q-Networks, policy gradients, actor-critic and Proximal Policy Optimization, using Stable-Baselines3, Sample Factory and CleanRL in free Colab notebooks &mdash; the optimisation machinery underneath the test-time training work above. Worth knowing before you start: the page carries a maintenance notice, and the Unit 7 AI-vs-AI feature and leaderboard are no longer operational, though the theory and exercises remain.</div>
+      <div style="padding-top:8px;"><a href="https://huggingface.co/learn/deep-rl-course/unit0/introduction" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Open course &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <!-- ===== FOOTER ===== -->
+    <tr>
+     <td bgcolor="#0B1220" style="padding:22px 26px;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#ffffff;letter-spacing:1.5px;">THE KNOWN <span style="color:#3DA5E0;">GOOD</span> NEWS</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#7d8b9c;padding-top:5px;letter-spacing:.5px;text-transform:uppercase;">Daily AI Intelligence Brief</div>
+      <div style="border-top:1px solid #1e2c3f;margin:16px 0 14px 0;font-size:0;line-height:0;">&nbsp;</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#7d8b9c;line-height:1.9;">
+       <a href="https://theknowngood.com" style="color:#a8b6c6;text-decoration:underline;">Unsubscribe</a>
+       <span style="color:#3c4b5f;">&nbsp;&middot;&nbsp;</span>
+       <a href="https://theknowngood.com/terms/" style="color:#a8b6c6;text-decoration:underline;">Terms of Use</a>
+       <span style="color:#3c4b5f;">&nbsp;&middot;&nbsp;</span>
+       <a href="https://theknowngood.com/privacy/" style="color:#a8b6c6;text-decoration:underline;">Privacy Policy</a>
+       <span style="color:#3c4b5f;">&nbsp;&middot;&nbsp;</span>
+       <a href="https://theknowngood.com" style="color:#a8b6c6;text-decoration:underline;">theknowngood.com</a>
+       <span style="color:#3c4b5f;">&nbsp;&middot;&nbsp;</span>
+       <a href="https://kkierii.github.io/TKG_News/archive/" style="color:#a8b6c6;text-decoration:underline;">Archive</a>
+      </div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#66748a;padding-top:12px;line-height:1.6;">
+       You are receiving this because you subscribed at theknowngood.com.
+      </div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#4f5d70;padding-top:10px;line-height:1.6;">
+       The Known Good aggregates publicly published benchmark data. We do not run our own evaluations.
+       External links are not endorsements and we accept no payment for placement or coverage.
+      </div>
+     </td>
+    </tr>
+
+   </table>
+  </td>
+ </tr>
+</table>
+</body></html>
