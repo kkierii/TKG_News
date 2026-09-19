@@ -1,0 +1,246 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The Known Good News — September 19, 2026</title><meta name="description" content="The Known Good News for Saturday, September 19, 2026: One plugin-pinning flaw in four AI coding agents: Claude Code, Codex and Copilot resolve an attacker&amp;rsquo;s branch over the commit they pinned"></head><body style="margin:0;background:#eef1f4;">
+<!--
+  THE KNOWN GOOD NEWS — LOCKED TEMPLATE v1
+  640px table layout, inline CSS, email-safe. Masthead = hosted PNG banner.
+  Daily generation swaps content only. Do not change layout, colors, or fonts.
+-->
+<table width="100%" cellpadding="0" cellspacing="0" style="margin:0;padding:0;">
+ <tr>
+  <td align="center" bgcolor="#eef1f4" style="padding:18px 10px;">
+
+   <table width="640" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="width:640px;max-width:640px;border:1px solid #d5dae0;">
+
+    <!-- ===== MASTHEAD ===== -->
+    <tr>
+     <td bgcolor="#0B1220" style="padding:0;font-size:0;line-height:0;">
+      <img src="https://raw.githubusercontent.com/kkierii/TKG_News/main/images/TKG_Banner.png" width="640" alt="The Known Good News — daily AI intelligence brief covering models, AI security, policy, chips and infrastructure, research, and incidents" style="display:block;width:100%;max-width:640px;height:auto;border:0;" />
+     </td>
+    </tr>
+
+    <!-- ===== DATE BAR + EDITOR NOTE ===== -->
+    <tr>
+     <td bgcolor="#f2f5f8" style="padding:11px 26px;border-top:3px solid #0271B8;border-bottom:1px solid #dde3e9;">
+      <table width="100%" cellpadding="0" cellspacing="0">
+       <tr>
+        <td style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0B1220;">Saturday, September 19, 2026</td>
+        <td align="right" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#5a6472;">Daily Edition</td>
+       </tr>
+      </table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;padding-top:6px;">Three threads today, two of them the same thread: researchers found one identical plugin-pinning flaw in all four major coding agents and half the vendors have declined to patch it; a security firm used frontier models to build a working exploit and rode it into OpenAI&rsquo;s internal monorepo; and California has told its agencies to report by November on whether a frontier-model kill switch is even buildable.</div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:26px 26px 6px 26px;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;letter-spacing:1px;color:#0B1220;text-transform:uppercase;border-bottom:2px solid #0B1220;padding-bottom:6px;">Featured</div>
+     </td>
+    </tr>
+
+    <tr>
+     <td bgcolor="#f4f7fa" style="padding:14px 26px 22px 26px;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#0271B8" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Breaking</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:19px;font-weight:bold;color:#0B1220;line-height:1.3;padding:10px 0 4px 0;">One plugin-pinning flaw in four AI coding agents: Claude Code, Codex and Copilot resolve an attacker&rsquo;s branch over the commit they pinned</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:8px;">Air Security &middot; September 17, 2026</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#2b3138;line-height:1.55;padding-bottom:9px;">Researchers at Air Security published work on September 17 describing a plugin SHA-pinning bypass they call Plugin4Shell, affecting Claude Code, OpenAI Codex, GitHub Copilot and Gemini CLI. The mechanism is the same in each: the agent checks out a marketplace-pinned commit, but never verifies that the working tree actually landed on it. An attacker who controls the plugin repository creates a default branch whose name is the exact 40-character hexadecimal string of the pinned commit &mdash; git resolves the ref ahead of the object ID, and the checkout silently lands on attacker-controlled code while reporting success. Gemini CLI falls to the same trick with a default branch named <i>FETCH_HEAD</i>.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#2b3138;line-height:1.55;padding-bottom:9px;">The part that makes this more than a curiosity is the update path. Claude Code and Codex refresh installed plugins in the background by default, so the swap reaches machines where the plugin was already installed and vetted, with no user action and no new install to review. SHA pinning is the specific control organisations adopted to survive a plugin author going bad; this defeats it while leaving the pin visibly in place.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#2b3138;line-height:1.55;padding-bottom:9px;">Air Security&rsquo;s disclosure timeline puts the finding in May 2026 and reports to vendors in June. Anthropic confirmed a fix in Claude Code 2.1.179 on June 17 and Codex 0.146.0 was verified fixed on August 12. Google declined to patch on August 4, on the grounds that Gemini CLI is deprecated. Microsoft has shipped no fix for Copilot. So two of the four remain exposed as of publication, one of them by decision rather than backlog. The researchers give a one-line mitigation for anyone building their own plugin loader: run <i>git rev-parse HEAD</i> after checkout and compare it against the SHA you asked for.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#2b3138;line-height:1.55;padding-bottom:9px;">Two caveats belong with this. No CVE has been assigned to Plugin4Shell and no CVSS score exists &mdash; Air Security calls it high-severity in prose, some coverage calls it critical, and neither is a scored rating, so we are attributing severity to the researchers rather than stating it as fact. Air Security is also a commercial vendor, and the post notes its own customers were unaffected and closes on a product call to action. The technical finding is reproducible from the post and the vendor fix versions are checkable; the framing around it is the vendor&rsquo;s own.</div>
+      <div style="padding-top:12px;"><a href="https://www.air.security/blog-posts/plugin4shell" style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#0271B8;text-decoration:none;">Read the research &rsaquo;</a></div>
+      <div style="padding-top:14px;margin-top:12px;border-top:1px solid #dde3e9;font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#5a6472;line-height:1.6;">Related from Field Notes &middot; <a href="https://blog.theknowngood.com/stop-saying-vibe-coding-is-easy" style="color:#0271B8;text-decoration:none;font-weight:bold;">Stop Saying Vibe Coding Is Easy &rsaquo;</a></div>
+     </td>
+    </tr>
+
+<!-- ===== THE BRIEF ===== -->
+    <tr>
+     <td style="padding:26px 26px 6px 26px;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;letter-spacing:1px;color:#0B1220;text-transform:uppercase;border-bottom:2px solid #0B1220;padding-bottom:6px;">The Brief</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:6px;line-height:1.5;">Models &amp; Releases &middot; AI Security &middot; Policy &amp; Regulation &middot; Chips &amp; Infrastructure &middot; Research &middot; Incidents</div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Incidents</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">An AI-built libheif exploit and an SSO token-scoping flaw reached OpenAI&rsquo;s internal monorepo</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">Hacktron &middot; Discourse advisory GHSA-vhm9-85gw-x335</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">Security firm Hacktron used Claude Opus 4.8 and Opus 5 to build a working heap-overflow exploit for CVE-2026-32882 in libheif, then used it to gain remote code execution on <i>community.openai.com</i>, OpenAI&rsquo;s Discourse-hosted forum, on July 25. Because the forum accepted &ldquo;Sign in with OpenAI&rdquo; and the resulting tokens carried permissions broad enough to grant full API access, the researchers took over an OpenAI employee&rsquo;s ChatGPT and Codex accounts and used that employee&rsquo;s Codex to open a pull request in OpenAI&rsquo;s internal monorepo before stopping. OpenAI confirmed a fix roughly 14 hours after the Bugcrowd submission and paid a $6,500 bounty; Discourse published GHSA-vhm9-85gw-x335 on July 28 rating it High at CVSS 8.8, with patched versions 2026.7.0, 2026.6.1, 2026.5.2 and 2026.1.6. The bounty, the 14-hour fix and the model attribution are Hacktron&rsquo;s own account; the CVSS score and patch list are Discourse&rsquo;s as CNA; OpenAI&rsquo;s characterisation that its review found only limited reads of private-repository metadata is a statement made to SecurityWeek, not a published OpenAI document.</div>
+      <div style="padding-top:10px;"><a href="https://www.hacktron.ai/blog/hacking-openai" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Policy &amp; Regulation</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">Newsom signs an executive order directing a November report on frontier-model kill-switch feasibility</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">Office of the Governor of California &middot; September 18, 2026</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">California Governor Gavin Newsom signed Executive Order N-9-26 on September 18, directing the Government Operations Agency to complete and publicly post the Government Code &sect;&nbsp;8898.1 application procedures and criteria for independent verification organisations no later than May 1, 2027, and &sect;&nbsp;11549.82(a) no later than December 1, 2027. Separately, GovOps must deliver recommendations to the Governor by November 16, 2026, developed with national experts, on the technical feasibility and potential efficacy of four possible statutory amendments: placing independent verifiers onsite at large frontier developers, independently verifying the safety frameworks those companies already file, creating a kill switch for frontier models, and widening the definition of a reportable critical safety incident to cover loss-of-control events. The order builds on SB 813 and AB 1405, signed earlier this month, and on 2025&rsquo;s SB 53. Worth being precise: the order does not create a kill switch or require one &mdash; it commissions a feasibility report &mdash; and it states on its face that it creates no rights enforceable at law or in equity.</div>
+      <div style="padding-top:10px;"><a href="https://www.gov.ca.gov/wp-content/uploads/2026/09/FINAL-N-9-26-AI-EO-9.18.26-SIGNED.pdf" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Models &amp; Releases</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">OpenAI ships Astra for Law, a GPT-6 Astra configuration with a dedicated legal index</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">OpenAI &middot; September 17, 2026</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">OpenAI announced Astra for Law on September 17, pairing its GPT-6 Astra model with a legal search index and custom instructions for legal analysis and drafting. The index covers US case law, statutes, regulations, court rules and administrative decisions across a corpus OpenAI puts at more than 230 million URLs, updated daily, and incorporates the Free Law Project&rsquo;s CourtListener collection. On 200 US legal research questions drawn from the private validation set of Vals AI&rsquo;s Legal Research Bench, OpenAI reports the configuration passed the overall correctness check on 54.0 per cent of questions at its highest reasoning effort, against 38.7 per cent for GPT-6 Astra using web search alone. Access goes first to selected firms through a Trusted Access programme in ChatGPT and Codex; the API model <i>gpt-6-astra-law</i> is listed as coming soon with no date. The benchmark is a third party&rsquo;s, but the evaluation runs are OpenAI&rsquo;s own and self-reported, and no pricing appears anywhere on the announcement.</div>
+      <div style="padding-top:10px;"><a href="https://openai.com/index/astra-for-law/" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Chips &amp; Infrastructure</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">Crusoe announces an initial close of $3.9bn at a $30.9bn post-money valuation, with Nvidia investing</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">Crusoe &middot; September 17, 2026</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">Crusoe said on September 17 that it had reached an initial closing of a $3.9 billion Series F at a $30.9 billion post-money valuation, co-led by Atreides Management, Mubadala Capital and Valor Equity Partners, with NVIDIA, Founders Fund, GIC, the Qatar Investment Authority, Radical Ventures and TPG also participating. In the same release the company reported more than $140 billion in total contracted value, over 6 GW of gross contracted capacity across data centres and cloud, and 1 GW described as delivered and operational today, alongside more than $100 million in contracted ARR for its Managed Inference product and over 1,800 staff. Two distinctions matter: this is an initial closing of a round the company calls anticipated, not a completed raise, and the 6 GW is contracted rather than built. Crusoe is private, so the contracted-value, bookings and ARR figures are self-reported and unaudited, and no figure is disclosed for NVIDIA&rsquo;s specific participation &mdash; a supplier taking equity in a customer is the structural detail here.</div>
+      <div style="padding-top:10px;"><a href="https://www.crusoe.ai/resources/newsroom/crusoe-announces-series-f-funding" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Research</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">DeepSeek preprint claims 890 bytes per token of resident KV cache for V4.1-Flash</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">arXiv:2609.19969 &middot; submitted September 17, 2026</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">DeepSeek-AI submitted arXiv:2609.19969 on September 17, describing DeepSeek-V4.1-Flash, a multimodal Mixture-of-Experts model with a 552B-parameter backbone supporting contexts up to one million tokens. Its causal encoder-decoder design activates 16B parameters per token during decode but only 8B during prefill, and the paper combines cross-layer KV cache reuse with FP4 KV caching to cut the global KV cache held in HBM to 890 bytes per token, roughly a quarter of DeepSeek-V4-Flash. A deployment technique the authors call SWA Bounded Replay is said to cut the persistent cache footprint held on SSD or host memory to about an eighth of the prior model, and the paper reports pretraining on a 45T-token multimodal corpus. This is a preprint with no journal reference and no conference acceptance noted, authored under the DeepSeek-AI group byline; every figure is the lab&rsquo;s own. The abstract&rsquo;s accuracy claim is qualitative only, so there is no benchmark score to quote here.</div>
+      <div style="padding-top:10px;"><a href="https://arxiv.org/abs/2609.19969" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Chips &amp; Infrastructure</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">Oracle contracts more than 1.7 GW of Texas wind through separate RWE and ENGIE deals</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">RWE Americas and ENGIE North America &middot; September 17, 2026</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">RWE announced on September 17 a virtual power purchase agreement with Oracle for 433 MW, sourced from its existing Panther Creek I, II and III wind farms in Sterling, Howard and Glasscock counties in West Texas. RWE&rsquo;s release states the agreement forms part of a broader Oracle portfolio representing more than 1.7 GW of generation capacity supporting the Texas grid. Separately the same day, ENGIE North America said it would supply up to 568 MW of renewable electricity to Oracle&rsquo;s Texas operations through a portfolio of ERCOT-connected wind resources. Two precisions worth keeping: the RWE deal is a virtual PPA, a financial contract settled against the grid rather than physical delivery to an Oracle facility, and the Panther Creek projects are existing assets repowered in 2019 and 2021 rather than new build. We could not locate an Oracle announcement of its own, so the 1.7 GW aggregate is Oracle&rsquo;s figure as restated by RWE.</div>
+      <div style="padding-top:10px;"><a href="https://www.rwe.com/en/press/rwe-americas/2026-09-17-rwe-signs-433-mw-virtual-power-purchase-agreement-with-oracle/" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Models &amp; Releases</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">Z.ai opens API access to GLM-5.3-FlashX at 200 tokens per second and 2.5&times; the price of Flash</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">Z.ai documentation &middot; September 18, 2026</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">Z.ai opened API access to GLM-5.3-FlashX, a faster-serving configuration of the same GLM-5.3-Flash system rather than a new base model. Z.ai&rsquo;s documentation lists it under the model code <i>glm-5.3-flashx</i> with 320B total parameters and 18B activated, a 1M-token context window, a 128K maximum output length, and native video, image, text and file input. Its published pricing puts FlashX at $0.37 per million input tokens and $1.25 per million output, against $0.15 and $0.50 for GLM-5.3-Flash, with cached input at $0.075 per million; Z.ai states the model reaches 200 tokens per second and that FlashX is not yet on its GLM Coding Plan. Two sourcing notes: the September 18 launch date is not on Z.ai&rsquo;s English pages, which carry no FlashX release-notes entry at all, and comes from Zhipu&rsquo;s WeChat announcement via PANews; and the widely-quoted 100,000 domestic-chip figure is from that same WeChat post, where Z.ai&rsquo;s own English documentation says only &ldquo;tens of thousands of domestically developed accelerators.&rdquo;</div>
+      <div style="padding-top:10px;"><a href="https://docs.z.ai/guides/vlm/glm-5.3-flash" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Policy &amp; Regulation</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">DOJ publishes a proposed consent decree barring a landlord from algorithmic pricing built on rivals&rsquo; data</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">Federal Register &middot; September 18, 2026</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">The Justice Department&rsquo;s Antitrust Division published a Federal Register notice on September 18 announcing that a proposed Final Judgment, Stipulation and Competitive Impact Statement were filed on September 4 in <i>United States, et al. v. RealPage, Inc., et al.</i>, Civil Action No. 1:24-cv-00710-LCB-JLW in the Middle District of North Carolina. The settling defendant is Pinnacle Property Management Services; the notice states the United States filed its complaint against Pinnacle on January 7, 2025, alleging that agreements to share information and align pricing with RealPage and other landlords violated Section 1 of the Sherman Act. Under the proposed judgment Pinnacle would be barred from licensing or using revenue-management software that relies on competitively sensitive data, prohibited from sharing such data with other landlords, and required to adopt an antitrust compliance policy and cooperate in the continuing case against RealPage, Greystar, Cushman &amp; Wakefield and the other defendants. The relief is injunctive only &mdash; there is no monetary penalty in this judgment &mdash; and it is proposed, not entered, now open to public comment for 60 days under the Tunney Act.</div>
+      <div style="padding-top:10px;"><a href="https://www.federalregister.gov/documents/2026/09/18/2026-19100/united-states-of-america-et-al-v-realpage-inc-et-al-proposed-final-judgment-and-competitive-impact" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+<!-- ===== MOVERS ===== -->
+    <tr>
+     <td style="padding:26px 26px 6px 26px;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;letter-spacing:1px;color:#0B1220;text-transform:uppercase;border-bottom:2px solid #0B1220;padding-bottom:6px;">Movers &mdash; From The Known Good</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:6px;line-height:1.5;">Net price moves across the tracked catalogue, 18 September. Same-day round trips are chained to a single net figure, and percentages are the site&rsquo;s own, never derived from the rounded prices shown.</div>
+     </td>
+    </tr>
+    <tr>
+     <td style="padding:14px 26px 4px 26px;">
+      <table width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #e4e8ed;">
+       <tr bgcolor="#f2f5f8">
+        <td style="padding:8px 10px;font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:bold;color:#5a6472;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid #e4e8ed;">Model</td>
+        <td style="padding:8px 10px;font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:bold;color:#5a6472;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid #e4e8ed;">Metric</td>
+        <td align="right" style="padding:8px 10px;font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:bold;color:#5a6472;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid #e4e8ed;">Change</td>
+       </tr>
+       <tr>
+        <td style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#0B1220;border-bottom:1px solid #eef1f4;">OpenAI: gpt-oss-120b</td>
+        <td style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;border-bottom:1px solid #eef1f4;">Blended 3:1, $0.07 &rarr; $0.26 / 1M tokens</td>
+        <td align="right" style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#b3261e;border-bottom:1px solid #eef1f4;">+274%</td>
+       </tr>
+       <tr>
+        <td style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#0B1220;border-bottom:1px solid #eef1f4;">Z.ai: GLM 5.3</td>
+        <td style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;border-bottom:1px solid #eef1f4;">Blended 3:1, $2.15 &rarr; $1.40 / 1M tokens</td>
+        <td align="right" style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#0a7d4b;border-bottom:1px solid #eef1f4;">&minus;35%</td>
+       </tr>
+       <tr>
+        <td style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#0B1220;border-bottom:1px solid #eef1f4;">Mistral: Mistral Large 3 2512</td>
+        <td style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;border-bottom:1px solid #eef1f4;">Blended 3:1, $0.75 &rarr; $0.82 / 1M tokens</td>
+        <td align="right" style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#b3261e;border-bottom:1px solid #eef1f4;">+10%</td>
+       </tr>
+      </table>
+      <div style="padding-top:10px;"><a href="https://theknowngood.com/leaderboard" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">See the full leaderboard &rsaquo;</a></div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:10px;line-height:1.55;">Sixteen models moved on 18 September. Three are printed above and thirteen are withheld. The reasons are the product, so here they are in full.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:10px;line-height:1.55;"><b>The published rows.</b> <b>OpenAI: gpt-oss-120b</b> and <b>Mistral: Mistral Large 3 2512</b> each have exactly one leg in their entire tracked history, so there is nothing to oscillate and no chain to break. Both reproduce the catalogue exactly from unrounded input and output: (3&times;$0.15 + $0.60)/4 = $0.2625 for gpt-oss-120b, and (3&times;$0.55 + $1.65)/4 = $0.825 for Mistral Large 3. Input and output are distinct on both, so neither is a routing artifact. One thing to read correctly on gpt-oss-120b: this is an open-weights model, and a move of this size in a routed blended price almost certainly reflects a change in which provider the traffic lands on, not a list-price decision by OpenAI. <b>Z.ai: GLM 5.3</b> is the cleanest row of the three &mdash; it closes at $1.3975 blended, a price it has never held before, against a prior record of only $1.68 and $2.15, so it is a genuine breakout rather than the back half of a flap. Note that this puts the routed blended price below Z.ai&rsquo;s own list pricing for GLM-5.3 in the Brief above; the $1.40 in that item is list price per million input tokens and the $1.40 here is a blended 3:1 figure, two different measures that happen to collide on the same number.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:10px;line-height:1.55;"><b>Withheld as oscillation or a round trip.</b> <b>DeepSeek: DeepSeek V4.1 Flash</b> has only ever settled at $0.26 and $0.52 and crossed between them four times on 18 September, netting zero. <b>Tencent: Hy3</b> has only ever settled at $0.14 and $0.23 and has alternated on every one of its twenty-four recorded legs. <b>DeepSeek: DeepSeek Pro Latest</b> and <b>DeepSeek: DeepSeek V4 Pro 0813</b> each net zero across six legs, both flapping on $0.87. <b>DeepSeek: DeepSeek Flash Latest</b> nets zero across five legs. <b>DeepSeek: DeepSeek V4 Pro 0423</b> nets zero across two legs, and <b>Z.ai: GLM 4.6</b> and <b>Z.ai: GLM Latest</b> likewise net zero.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:10px;line-height:1.55;"><b>Withheld because the catalogue disagrees.</b> <b>MoonshotAI: Kimi K3</b> shows a site headline of &minus;28% closing at $4.31, but the catalogue carries $3.40. <b>DeepSeek: DeepSeek V4 Flash Latest</b> closes at $0.08 against a catalogue $0.0500 &mdash; and its next recorded leg, already on 19 September, starts from $0.07, a price the closing figure never reached. <b>DeepSeek: DeepSeek V4 Pro 0423</b> closes at $2.00 against a catalogue $0.5279. <b>Z.ai: GLM 5.2</b> closes at $0.87 against $0.8514, <b>Z.ai: GLM Latest</b> at $1.40 against $1.3696, <b>Z.ai: GLM 4.6</b> at $0.76 against $0.8750, <b>Tencent: Hy3</b> at $0.14 against $0.2310 and <b>DeepSeek: DeepSeek Flash Latest</b> at $0.24 against $0.2275. A changelog endpoint the catalogue will not confirm is an ingest artifact, not a price change.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:10px;line-height:1.55;"><b>Withheld on a flapping endpoint.</b> <b>Meta: Muse Glimmer 30B</b> shows a site headline of +28% to $0.64 and the catalogue confirms $0.6375, but $0.50 and $0.64 are the only two prices it has ever held and it has now crossed between them three times. This is the second consecutive issue in which this model has moved and could not be printed &mdash; yesterday it was the down leg, today the up leg, and neither is a move. <b>DeepSeek: DeepSeek V4 Flash 0423</b> is withheld on the same rule, flapping on $0.09 inside the window.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:10px;line-height:1.55;"><b>Withheld for needing a derived percentage.</b> <b>Z.ai: GLM 5.2</b> covers $2.15 to $0.87 across two legs, which is a large and possibly real move, but a two-leg net has no site headline behind it and we will not compute one from rounded displayed prices. It is the row we were least comfortable withholding today.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#8a93a0;padding-top:8px;line-height:1.5;">Price data from The Known Good (<a href="https://theknowngood.com" style="color:#0271B8;text-decoration:none;">theknowngood.com</a>, CC BY 4.0), collected via OpenRouter. Benchmark data includes Epoch AI (CC BY).</div>
+     </td>
+    </tr>
+
+<!-- ===== SKILL UP — FREE TRAINING ===== -->
+    <tr>
+     <td style="padding:26px 26px 6px 26px;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;letter-spacing:1px;color:#0B1220;text-transform:uppercase;border-bottom:2px solid #0B1220;padding-bottom:6px;">Skill Up &mdash; Free Training</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:6px;line-height:1.5;">Free training tied to today&rsquo;s stories. Every link checked this morning. Not endorsements. We accept no payment for placement or coverage, and use no affiliate links.</div>
+     </td>
+    </tr>
+    <tr>
+     <td style="padding:14px 26px;border-bottom:1px solid #e4e8ed;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#0B1220;">AI Dev Tools Zoomcamp</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding:2px 0 4px 0;">DataTalks.Club &middot; Free &middot; four modules, project-based</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.5;">The direct counterpart to today&rsquo;s featured story. The syllabus runs from spec-driven work with coding agents through MCP servers, skills, hooks, subagents and plugin and extension patterns, and closes on a module covering agent and MCP supply-chain scanning, AI-assisted pull-request audit and AI tool governance &mdash; which is precisely the control that Plugin4Shell defeats. The FAQ states the course is &ldquo;completely free&rdquo; with &ldquo;no hidden costs, no tuition fees, and no paid tiers,&rdquo; and that the certificate is earned by passing the final project. Two things to know before you start: the certificate requires the live cohort, which began on 31 August, and self-paced learners get every material but no certificate. The course teaches with Claude Code, Codex and Copilot but is community-run rather than vendor training.</div>
+      <div style="padding-top:8px;"><a href="https://datatalks.club/blog/ai-dev-tools-zoomcamp.html" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Open course &rsaquo;</a></div>
+     </td>
+    </tr>
+    <tr>
+     <td style="padding:14px 26px;border-bottom:1px solid #e4e8ed;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#0B1220;">Ethics of AI</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding:2px 0 4px 0;">University of Helsinki &middot; Free &middot; seven chapters, self-paced</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.5;">Background for the California executive order above, which is an accountability and enforceability question long before it is a technical one. The seven chapters cover accountability and the &ldquo;who should be blamed&rdquo; problem, transparency, human rights, fairness, and a closing chapter on AI ethics in practice &mdash; the same ground the order covers when it asks whether onsite verifiers and a kill switch are workable rather than merely desirable. The site states plainly that the course is free, and the FAQ says the certificate &ldquo;is available to all who pass the course&rdquo; with no Open University enrolment required. Only the 2 ECTS credits need a separate paid enrolment; the certificate itself does not.</div>
+      <div style="padding-top:8px;"><a href="https://ethics-of-ai.mooc.fi/" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Open course &rsaquo;</a></div>
+     </td>
+    </tr>
+    <tr>
+     <td style="padding:14px 26px;border-bottom:1px solid #e4e8ed;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#0B1220;">Can renewable energy sources power the world?</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding:2px 0 4px 0;">The Open University (OpenLearn) &middot; Free &middot; 24 hours across eight weeks</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.5;">The buy-side of today&rsquo;s Oracle and Crusoe items. Both stories are really about whether contracted gigawatts turn into delivered electrons, and this course covers renewable generation technologies, supply and demand matching, grid integration and 2050 scenarios &mdash; enough to read a virtual PPA for what it is rather than what the press release calls it. The page is labelled &ldquo;Free course&rdquo; with a &ldquo;Free statement of participation on completion,&rdquo; states you can start without signing up, and offers a free digital badge; it is also CPD Standards Office accredited for 24 points.</div>
+      <div style="padding-top:8px;"><a href="https://www.open.edu/openlearn/science-maths-technology/can-renewable-energy-sources-power-the-world/content-section-overview" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Open course &rsaquo;</a></div>
+     </td>
+    </tr>
+
+<!-- ===== FOOTER ===== -->
+    <tr>
+     <td bgcolor="#0B1220" style="padding:22px 26px;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#ffffff;letter-spacing:1.5px;">THE KNOWN <span style="color:#3DA5E0;">GOOD</span> NEWS</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#7d8b9c;padding-top:5px;letter-spacing:.5px;text-transform:uppercase;">Daily AI Intelligence Brief</div>
+      <div style="border-top:1px solid #1e2c3f;margin:16px 0 14px 0;font-size:0;line-height:0;">&nbsp;</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#7d8b9c;line-height:1.9;">
+       <a href="https://theknowngood.com" style="color:#a8b6c6;text-decoration:underline;">Unsubscribe</a>
+       <span style="color:#3c4b5f;">&nbsp;&middot;&nbsp;</span>
+       <a href="https://theknowngood.com/terms/" style="color:#a8b6c6;text-decoration:underline;">Terms of Use</a>
+       <span style="color:#3c4b5f;">&nbsp;&middot;&nbsp;</span>
+       <a href="https://theknowngood.com/privacy/" style="color:#a8b6c6;text-decoration:underline;">Privacy Policy</a>
+       <span style="color:#3c4b5f;">&nbsp;&middot;&nbsp;</span>
+       <a href="https://theknowngood.com" style="color:#a8b6c6;text-decoration:underline;">theknowngood.com</a>
+       <span style="color:#3c4b5f;">&nbsp;&middot;&nbsp;</span>
+       <a href="https://kkierii.github.io/TKG_News/archive/" style="color:#a8b6c6;text-decoration:underline;">Archive</a>
+      </div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#66748a;padding-top:12px;line-height:1.6;">
+       You are receiving this because you subscribed at theknowngood.com.
+      </div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#4f5d70;padding-top:10px;line-height:1.6;">
+       The Known Good aggregates publicly published benchmark data. We do not run our own evaluations.
+       External links are not endorsements and we accept no payment for placement or coverage.
+      </div>
+     </td>
+    </tr>
+
+   </table>
+  </td>
+ </tr>
+</table>
+</body></html>
