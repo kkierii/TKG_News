@@ -1,0 +1,254 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The Known Good News — October 3, 2026</title><meta name="description" content="The Known Good News for Saturday, October 3, 2026: GitLab scores an AI Gateway prompt-template escape at 9.9, with command execution at the end of it"></head><body style="margin:0;background:#eef1f4;">
+<!--
+  THE KNOWN GOOD NEWS — LOCKED TEMPLATE v1
+  640px table layout, inline CSS, email-safe. Masthead = hosted PNG banner.
+  Daily generation swaps content only. Do not change layout, colors, or fonts.
+-->
+<table width="100%" cellpadding="0" cellspacing="0" style="margin:0;padding:0;">
+ <tr>
+  <td align="center" bgcolor="#eef1f4" style="padding:18px 10px;">
+
+   <table width="640" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="width:640px;max-width:640px;border:1px solid #d5dae0;">
+
+    <!-- ===== MASTHEAD ===== -->
+    <tr>
+     <td bgcolor="#0B1220" style="padding:0;font-size:0;line-height:0;">
+      <img src="https://raw.githubusercontent.com/kkierii/TKG_News/main/images/TKG_Banner.png" width="640" alt="The Known Good News — daily AI intelligence brief covering models, AI security, policy, chips and infrastructure, research, and incidents" style="display:block;width:100%;max-width:640px;height:auto;border:0;" />
+     </td>
+    </tr>
+
+    <!-- ===== DATE BAR + EDITOR NOTE ===== -->
+    <tr>
+     <td bgcolor="#f2f5f8" style="padding:11px 26px;border-top:3px solid #0271B8;border-bottom:1px solid #dde3e9;">
+      <table width="100%" cellpadding="0" cellspacing="0">
+       <tr>
+        <td style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0B1220;">Saturday, October 3, 2026</td>
+        <td align="right" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#5a6472;">Daily Edition</td>
+       </tr>
+      </table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;padding-top:6px;">Three threads. GitLab scored a prompt-template escape in its own AI Gateway at 9.9 and shipped the fix to its hosted gateways while self-hosted installs wait on an admin; Microsoft&rsquo;s 2026 Digital Defense Report puts median time from vulnerability discovery to weaponisation below 24 hours against remediation cycles of 30 to 60 days, and says the advantage currently sits with the attacker; and the Justice Department arrested the owner of a City of Industry computer firm over more than $300 million in GPU servers routed to China. Two of our own Movers figures from yesterday needed re-reading this morning. One of them changed shape.</div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:26px 26px 6px 26px;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;letter-spacing:1px;color:#0B1220;text-transform:uppercase;border-bottom:2px solid #0B1220;padding-bottom:6px;">Featured</div>
+     </td>
+    </tr>
+
+    <tr>
+     <td bgcolor="#f4f7fa" style="padding:14px 26px 22px 26px;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#0271B8" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Breaking</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:19px;font-weight:bold;color:#0B1220;line-height:1.3;padding:10px 0 4px 0;">GitLab scores an AI Gateway prompt-template escape at 9.9, with command execution at the end of it</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:8px;">GitLab patch release &middot; CVE record published 2 October 2026</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#2b3138;line-height:1.55;padding-bottom:9px;">GitLab has assigned <b>CVE-2026-90970</b> to an improper-neutralisation issue in the custom flow prompt template used by its AI Gateway, and scored it <b>9.9 critical</b> on <span style="white-space:nowrap;">CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H</span>. GitLab&rsquo;s own advisory describes the consequence without hedging: the flaw &ldquo;could have allowed an authenticated user with Duo Agent Platform access to escape the prompt template sandbox via a specially crafted flow configuration, leading to arbitrary command execution on the AI Gateway.&rdquo; The privilege required is an ordinary authenticated user with access to the agent platform, and the scope is marked changed, which is what carries the score to 9.9.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#2b3138;line-height:1.55;padding-bottom:9px;">Affected are all versions from 18.1.6 before 19.2.4, 19.3 before 19.3.2, and 19.4 before 19.4.1, fixed in 19.2.4, 19.3.2 and 19.4.1. The CVE record credits HackerOne researcher <span style="white-space:nowrap;">invisiblemeerkat</span> and carries a publication date of 2 October 2026.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#2b3138;line-height:1.55;padding-bottom:9px;"><b>The fix is already in place on one side of the install base and not the other, and the line is not where you would guess.</b> GitLab states that a fix &ldquo;has already been deployed for GitLab-hosted AI Gateways&rdquo; and that &ldquo;customers using GitLab.com, GitLab Dedicated, and GitLab Self-Managed instances using a GitLab-hosted AI Gateway are protected and do not need to take action.&rdquo; The exposure is specific to installations running their own AI Gateway, which have to be upgraded by whoever runs them &mdash; so being self-managed does not by itself put you in the patch queue, and being on GitLab.com does not by itself keep you out of it if you point Duo at a gateway of your own. The component waiting on an admin is the one that executes model-authored instructions.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#2b3138;line-height:1.55;padding-bottom:9px;"><b>Two details in circulation are not GitLab&rsquo;s.</b> GitLab&rsquo;s advisory page carries no release date of its own; the 2 October date above is the CVE record&rsquo;s <span style="white-space:nowrap;">datePublished</span>. And the widely repeated lines that there is no evidence of active exploitation and that CISA assesses exploitation as &ldquo;none&rdquo; appear in press coverage, not in GitLab&rsquo;s advisory or the CVE record; we did not confirm them on a CISA page, so treat the exploitation status as unestablished rather than as cleared.</div>
+      <div style="padding-top:12px;"><a href="https://docs.gitlab.com/releases/patches/other-patches/patch-release-gitlab-ai-gateway-19-4-1-released/" style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#0271B8;text-decoration:none;">Read the GitLab patch release &rsaquo;</a></div>
+      <div style="padding-top:14px;margin-top:12px;border-top:1px solid #dde3e9;font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#5a6472;line-height:1.6;">Related from Field Notes &middot; <a href="https://blog.theknowngood.com/patch-queue-vulnerability" style="color:#0271B8;text-decoration:none;font-weight:bold;">The Patch Queue Is the New Vulnerability &rsaquo;</a></div>
+     </td>
+    </tr>
+
+<!-- ===== THE BRIEF ===== -->
+    <tr>
+     <td style="padding:26px 26px 6px 26px;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;letter-spacing:1px;color:#0B1220;text-transform:uppercase;border-bottom:2px solid #0B1220;padding-bottom:6px;">The Brief</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:6px;line-height:1.5;">Models &amp; Releases &middot; AI Security &middot; Policy &amp; Regulation &middot; Chips &amp; Infrastructure &middot; Research &middot; Incidents</div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">AI Security</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">Microsoft&rsquo;s own report says attackers are currently gaining more from AI than defenders</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">Microsoft, 2026 Digital Defense Report &middot; 1 October 2026</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">Microsoft published its 2026 Digital Defense Report on 1 October, writing that &ldquo;AI is changing the physics of cybersecurity&rdquo; and describing attacks moving from AI-assisted human operators toward autonomous execution, with frontier systems demonstrating 32 attack stages chained together in a controlled environment. The report states nearly 40,000 CVEs were published in the first half of 2026, putting the year on track to roughly double, and that median time from vulnerability discovery to weaponisation has fallen to well below 24 hours against enterprise remediation cycles of 30 to 60 days. It counts ClickFix-style attacker commands executed on more than 1.1 million unique devices between February and early May 2026, roughly an eightfold increase, with user execution at 30% of observed initial access and valid accounts at 20%. <b>A long list of figures attributed to this report is not on the pages we read.</b> Phishing rising from 7% to 23% of investigated intrusions, a ~72,000 full-year CVE projection, a 52.2% credential-harvesting share and the s1ngularity victim counts all come from secondary write-ups; Microsoft&rsquo;s blog and report landing page carry none of them, and the two CVE figures are not the same claim.</div>
+      <div style="padding-top:10px;"><a href="https://www.microsoft.com/en-us/security/blog/2026/10/01/insights-from-the-2026-microsoft-digital-defense-report/" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Research</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">Google: bugs it judges AI-discovered are twice as likely to reach remote code execution</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">Google Threat Intelligence Group &middot; 30 September 2026, covered 1 October</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">Google Threat Intelligence Group analysed disclosures from 1 January 2025 to 31 August 2026 and reports monthly CVE disclosures roughly doubling, from 5,045 in January 2026 to 10,740 in August 2026, with high-risk disclosures rising from 131 to 350. For the subset it identifies as likely AI-discovered, 50% lead to remote code execution against 26% across the broader CVE ecosystem, and 39% were rated low risk against 69% for non-AI findings. GTIG counts 2,076 cumulative AI-related CVE disclosures since January 2025, with AI orchestration and agent frameworks the largest layer at 782 vulnerabilities, up 347% in 2026. It also reports that only 0.23% of disclosed vulnerabilities, about one in 431, were exploited in the wild, while the 141 distinct vulnerabilities exploited in January to August 2026 already exceed the 127 for all of 2025 &mdash; and cites CVE-2026-1731, an unauthenticated command injection in BeyondTrust Privileged Remote Access found autonomously by Hacktron AI, as exploited by one cluster four days after disclosure and five more by day seven. The report is dated 30 September, a day outside our window; the figures above are from Google&rsquo;s own post, not from the 1 October coverage of it.</div>
+      <div style="padding-top:10px;"><a href="https://cloud.google.com/blog/topics/threat-intelligence/vulnerability-discovery-and-exploitation-trends-in-the-ai-era" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Policy &amp; Regulation</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">Justice Department charges California executive over $300m in GPU servers routed to China</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">US Department of Justice, Office of Public Affairs &middot; 1 October 2026</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">The Justice Department announced the arrest of Greg Lui, 38, of San Gabriel, California, also known as Yiu Kong Lui, owner of Earthmade Computer Inc. of City of Industry, on three counts: conspiracy to violate the Export Control Reform Act, outbound smuggling, and conspiracy to commit money laundering. The release says the scheme moved more than $300 million in export-controlled servers containing US-manufactured GPUs, and that Earthmade received $176 million from Malaysian shipping companies between January and October 2024. Maximum terms are 20 years for the ECRA conspiracy, 20 for the money-laundering conspiracy and 10 for smuggling; the case sits in the Central District of California and was investigated by the FBI, Commerce&rsquo;s Bureau of Industry and Security and the Defense Criminal Investigative Service. <b>The release names no GPU or server model and gives no docket number</b>, so coverage describing these specifically as Nvidia AI servers is going further than the charging announcement does.</div>
+      <div style="padding-top:10px;"><a href="https://www.justice.gov/opa/pr/california-man-arrested-smuggling-more-300-million-export-controlled-computer-servers-china" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Incidents</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">Attackers bought search ads and staged the lure inside chatgpt.com itself</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">Island &middot; 1 October 2026</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">Researchers at Island documented a malvertising campaign that bought Google sponsored-search ads on queries such as &ldquo;chatgpt&rdquo; and pointed them at attacker-created Custom GPT content hosted on legitimate chatgpt.com routes. The Custom GPT configurations returned the same scripted reply whatever the user typed &mdash; &ldquo;We are experiencing high traffic now. Continue on our backup domain&rdquo; &mdash; steering victims onto lookalike infrastructure. Across May to August 2026 Island counted roughly 850 paid-ad landings, 26 lookalike ChatGPT destinations and 71 distinct Google Ads campaign IDs, with the confirmed payload NetSupport RAT delivered by PowerShell loaders behind clipboard-assisted ClickFix commands run through the Windows Run dialog. <b>There is no victim count.</b> Island says plainly that its figures represent exposure and delivery infrastructure rather than confirmed infections; the Telegram command-and-control detail appears only in Cybernews, and neither source records a response from OpenAI or Google.</div>
+      <div style="padding-top:10px;"><a href="https://www.island.io/blog/how-attackers-use-sponsored-search-custom-gpts-in-malware-delivery" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Chips &amp; Infrastructure</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">Michigan approves DTE&rsquo;s Google contracts with nine conditions aimed at other ratepayers</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">Michigan Public Service Commission, Case No. U-22058 &middot; order dated 1 October 2026</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">The Michigan Public Service Commission approved DTE Electric&rsquo;s special contracts with Google in Case No. U-22058 by order dated 1 October, covering the Project Cannoli campus in Van Buren Township. The Primary Supply Agreement runs 20 years against DTE&rsquo;s standard five-year D11 contracts, sets minimum billing demand at 80% where 50% to 65% is typical, and obliges Google to pay minimum monthly charges for at least 15 years on early termination, with service expected to begin December 2027 and reach maximum load by December 2028. A companion Clean Capacity Accelerator Agreement has Google fund up to 1,600 MW of renewable generation and 480 MW of battery storage that DTE will own and operate, plus 300 MW of capacity credits provided at no cost. Nine conditions are attached, including that the costs of serving Google are not covered by other customers and that no caps be placed on what Google must pay for infrastructure upgrades. <b>Two figures in circulation are not Commission findings:</b> the $1.7 billion 20-year customer benefit is DTE&rsquo;s own projection as relayed in the release, and the roughly 1 GW campus size appears in consumer information and press coverage rather than in the order summary.</div>
+      <div style="padding-top:10px;"><a href="https://www.michigan.gov/mpsc/commission/news-releases/2026/10/01/mpsc-approves-dte-electric-google-data-center-and-contracts-protects-customers-from-project-cost" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Models &amp; Releases</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">Microsoft AI prices a streaming transcription model at $0.54 per hour of audio</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">Microsoft AI &middot; 1 October 2026</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">Microsoft AI announced MAI-Transcribe-2-Streaming alongside MAI-Voice-2.1 and MAI-Voice-2.1-Flash. The transcription model covers 60 languages with automatic continuous language detection, returns first hypotheses in just over 100 ms, and is priced at $0.54 per hour of audio &ldquo;through the end of the year.&rdquo; MAI-Voice-2.1 covers 23 languages and 26 locales at $22 per million characters; MAI-Voice-2.1-Flash claims end-to-end latency of 150 ms for 45 seconds of audio at $15 per million characters, with voice cloning from a few seconds of reference audio and what Microsoft calls built-in consent guardrails. All three are reachable through Microsoft Foundry, MAI Playground, OpenRouter, Vercel and Azure Voice Live. <b>The accuracy claim is Microsoft&rsquo;s own.</b> The post asserts a number-one Artificial Analysis ranking for both final and partial transcripts; we did not read that leaderboard, the post publishes no word error rate, and its comparative claims of 2x faster word appearance and Flash being 55% faster and ~60% cheaper name no baseline or competitor.</div>
+      <div style="padding-top:10px;"><a href="https://microsoft.ai/news/our-first-streaming-transcription-model/" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Chips &amp; Infrastructure</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">Oracle will absorb about $300m of above-market nuclear costs for Wisconsin ratepayers</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">Oracle and We Energies &middot; 2 October 2026</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">Oracle said it will voluntarily subscribe to a portion of the above-market energy We Energies must buy from the Point Beach nuclear plant in Manitowoc County, absorbing approximately $300 million in rising costs and, in Oracle&rsquo;s words, directly benefiting more than one million Wisconsin utility customers. The subscription supports Project Lighthouse, Oracle&rsquo;s data centre campus at Port Washington, which both releases put at $11 billion in local economic impact, more than 4,000 construction jobs over three years and 1,000 permanent operations roles, with Oracle fully funding the project&rsquo;s energy costs. Both companies state the arrangement must go to the Public Service Commission of Wisconsin for review. <b>Neither release states the volume, the share or the term.</b> No megawatt figure, no percentage of Point Beach output and no contract length appears in either; the reported 10% to 20% share and the five-year framing of the $300 million are press figures, no PSCW docket number has been published, and neither release names OpenAI as co-developer or NextEra as the plant&rsquo;s owner.</div>
+      <div style="padding-top:10px;"><a href="https://www.oracle.com/news/announcement/oracle-announces-commitment-to-absorb-rising-point-beach-energy-costs-2026-10-02/" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Policy &amp; Regulation</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">Connecticut&rsquo;s AI act starts with subscription limits and AI-related layoff disclosure</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">Connecticut General Assembly, sSB 5 / Public Act 26-15 &middot; effective 1 October 2026</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">The first provisions of Connecticut&rsquo;s Artificial Intelligence Responsibility and Transparency Act took effect on 1 October. Two sections start on that date: section 1 requires providers of paid AI subscriptions to give written disclosures before a resident enters or renews a subscription or is charged, including any quantitative or qualitative limitations and whether the provider may restrict access at its discretion; and section 26 requires employers to disclose whether layoffs relate to AI use. Section 2 bars frontier developers from disciplining an employee for reporting an issue where the report rested on a reasonable belief the developer did something posing a specific and substantial danger, and large frontier developers &mdash; those with annual gross revenues above $500 million in the prior year &mdash; must have an anonymous internal channel for catastrophic risk by 1 January 2027. <b>We read the legislature&rsquo;s own bill analysis, and several widely reported provisions are not in the section we read:</b> the AI-companion rules, the 988 referral requirement, enforcement under the Unfair Trade Practices Act and the 1 October 2027 automated employment-decision deadline come from law-firm and broadcast summaries. One secondary source miscites the act number entirely.</div>
+      <div style="padding-top:10px;"><a href="https://www.cga.ct.gov/2026/BA/PDF/2026SB-00005-R01-BA.PDF" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+<!-- ===== MOVERS ===== -->
+    <tr>
+     <td style="padding:26px 26px 6px 26px;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;letter-spacing:1px;color:#0B1220;text-transform:uppercase;border-bottom:2px solid #0B1220;padding-bottom:6px;">Movers &mdash; From The Known Good</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:6px;line-height:1.5;">Blended 3:1 price per 1M tokens, from our own ingest of OpenRouter published pricing. 10 models moved across 20 logged legs in the 3 October window. Three are printed; six are withheld and named below, and one netted zero.</div>
+     </td>
+    </tr>
+    <tr>
+     <td style="padding:14px 26px 4px 26px;">
+      <table width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #e4e8ed;">
+       <tr bgcolor="#f2f5f8">
+        <td style="padding:8px 10px;font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:bold;color:#5a6472;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid #e4e8ed;">Model</td>
+        <td style="padding:8px 10px;font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:bold;color:#5a6472;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid #e4e8ed;">Metric</td>
+        <td align="right" style="padding:8px 10px;font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:bold;color:#5a6472;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid #e4e8ed;">Change</td>
+       </tr>
+       <tr>
+        <td style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#0B1220;border-bottom:1px solid #eef1f4;">MoonshotAI: Kimi K2.6</td>
+        <td style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;border-bottom:1px solid #eef1f4;">$0.78 &rarr; $1.71 blended</td>
+        <td align="right" style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#b3261e;border-bottom:1px solid #eef1f4;">+119%</td>
+       </tr>
+       <tr>
+        <td style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#0B1220;border-bottom:1px solid #eef1f4;">Z.ai: GLM Flash Latest</td>
+        <td style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;border-bottom:1px solid #eef1f4;">$0.25 &rarr; $0.15 blended</td>
+        <td align="right" style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#0a7d4b;border-bottom:1px solid #eef1f4;">&minus;40%</td>
+       </tr>
+       <tr>
+        <td style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#0B1220;border-bottom:1px solid #eef1f4;">DeepSeek: DeepSeek Flash Latest</td>
+        <td style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;border-bottom:1px solid #eef1f4;">$0.18 &rarr; $0.16 blended</td>
+        <td align="right" style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#0a7d4b;border-bottom:1px solid #eef1f4;">&minus;9%</td>
+       </tr>
+      </table>
+      <div style="padding-top:10px;"><a href="https://theknowngood.com/leaderboard" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">See the full leaderboard &rsaquo;</a></div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:10px;line-height:1.55;">Each printed row moved on a single logged leg, so every percentage above is the one the changelog published rather than anything we computed. We recomputed each close from the catalogue&rsquo;s own 3:1 components as a cross-check and all three agree: Kimi K2.6 at $1.7125 from $0.95 and $4.00, GLM Flash Latest at $0.15125 from $0.035 and $0.50, DeepSeek Flash Latest at $0.165 from $0.02 and $0.60. Kimi K2.6&rsquo;s $1.71 is a price it has never held before. <b>No endpoint contradicted the catalogue among the rows we printed</b>, and DeepSeek Flash Latest is a live instance of why we never derive a percentage from displayed prices: $0.18 to $0.16 reads as &minus;11% on the rounded figures and the site publishes &minus;9%, because the percentage is computed on unrounded values.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:10px;line-height:1.55;"><b>Withheld because the net would have to be derived (3).</b> DeepSeek Pro Latest ran $0.20 to $1.14 to $0.76 to $1.13 across three legs; DeepSeek V4 Flash Latest took six legs from $0.16 to $0.33; MoonshotAI Kimi Latest took three from $3.59 to $3.71. A multi-leg net has no published percentage, and we will not manufacture one.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:10px;line-height:1.55;"><b>Kimi Latest is also a catalogue contradiction, which is the stronger reason.</b> The changelog closes it at $3.71; the catalogue prices it at $3.99213, from $0.9895 input and $13.00 output. That is a 28-cent gap, far outside rounding, so one of the two is an ingest artifact and we do not yet know which. That is a withhold, not a judgement call.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:10px;line-height:1.55;"><b>Withheld as two-value oscillators (3).</b> Tencent Hy3 has held only $0.14 and $0.23 across 13 logged legs; Tencent Hy4 preview only $1.13 and $1.25 across six; Z.ai GLM 5.1 only $1.48 and $2.15 across seven. None broke out to a price it has never held, which is the only condition under which we print an oscillator. GLM 5.1 carries a second oddity worth naming: its $2.15 close has exactly the same input and output components as GLM 5.3&rsquo;s &mdash; $1.40 and $4.40 &mdash; differing only in cache-read price. Two versions of the same family at byte-identical pricing is the shape an ingest artifact takes.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:10px;line-height:1.55;"><b>Netted zero (1).</b> Qwen3 30B A3B Instruct 2507 went $0.08 to $0.15 and back to $0.08 on the same day. A round trip is not a move.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:10px;line-height:1.55;"><b>A correction to how we described one of yesterday&rsquo;s rows, though the figure itself stands.</b> We re-read all three of yesterday&rsquo;s published rows against the changelog this morning, because the window overlaps the previous run. Z.ai GLM 5.3 and Qwen3.5-35B-A3B each still carry exactly one 2 October leg and both percentages stand. <b>NVIDIA Nemotron 3 Ultra now carries three.</b> When we built yesterday it showed one leg, $1.05 to $0.92 at &minus;12%, and we printed that. The changelog has since added two more: $0.92 back to $1.05, then $1.05 to $0.92 again. The net is still &minus;12% and the catalogue still confirms $0.925, so the number we published was and is correct &mdash; but it is now a round trip that happens to have stopped on the far side, and under our own flap-endpoint rule that row would be withheld today rather than printed. We are telling you because the figure survived on luck, not on method.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#8a93a0;padding-top:8px;line-height:1.5;">Price data via OpenRouter. Benchmark data includes Epoch AI (CC BY). Catalogue and price history from <a href="https://theknowngood.com" style="color:#0271B8;text-decoration:none;">The Known Good</a>, CC BY 4.0.</div>
+     </td>
+    </tr>
+
+<!-- ===== SKILL UP — FREE TRAINING ===== -->
+    <tr>
+     <td style="padding:26px 26px 6px 26px;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;letter-spacing:1px;color:#0B1220;text-transform:uppercase;border-bottom:2px solid #0B1220;padding-bottom:6px;">Skill Up &mdash; Free Training</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:6px;line-height:1.5;">Four free courses tied to today&rsquo;s threads. We check that every page loads and states its own terms before we list it. Not endorsements. We accept no payment for placement or coverage, and use no affiliate links.</div>
+     </td>
+    </tr>
+    <tr>
+     <td style="padding:14px 26px;border-bottom:1px solid #e4e8ed;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#0B1220;">Introduction to Vulnerability Management</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding:2px 0 4px 0;">Centri, formerly Security Blue Team &middot; Free, no certificate offered &middot; about 5 hours, self-paced</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.5;">The vulnerability management lifecycle end to end &mdash; scanning, analysis, reporting &mdash; with hands-on work in Nessus Essentials, WPScan and Metasploitable 2, and direct coverage of CVE and CVSS. The page states &ldquo;Training price FREE&rdquo;; no certificate attaches to this course, and Centri&rsquo;s certifications are separate paid products. Note that the old securityblue.team address now redirects here.</div>
+      <div style="padding-top:8px;"><a href="https://www.centri.org/courses/introduction-to-vulnerability-management" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Open course &rsaquo;</a></div>
+     </td>
+    </tr>
+    <tr>
+     <td style="padding:14px 26px;border-bottom:1px solid #e4e8ed;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#0B1220;">Secure AI/ML-Driven Software Development (LFEL1012)</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding:2px 0 4px 0;">The Linux Foundation &middot; Free, digital badge included &middot; 60 to 90 minutes, 30 days of access</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.5;">Reviewing AI-generated changes and balancing development speed against code safety &mdash; the practice on the other side of today&rsquo;s lead, where the component that executes model-authored instructions was the one that needed patching. Listed at $0 with quizzes and a digital badge included, so nothing here is paywalled. The one caveat the page states plainly is 30 days of access.</div>
+      <div style="padding-top:8px;"><a href="https://training.linuxfoundation.org/express-learning/secure-ai-ml-driven-software-development-lfel1012/" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Open course &rsaquo;</a></div>
+     </td>
+    </tr>
+    <tr>
+     <td style="padding:14px 26px;border-bottom:1px solid #e4e8ed;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#0B1220;">Frontier AI Governance</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding:2px 0 4px 0;">BlueDot Impact &middot; Free, no certificate offered &middot; about 40 hours, cohort-based</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.5;">Six units on how frontier AI is actually governed, mapping the institutions and comparing policy strategies across the US, UK, EU, China and international bodies &mdash; the background for a day with a new state AI act in force and a federal export-control prosecution. The page states &ldquo;Completely free. No hidden costs&rdquo; and mentions no certificate. <b>The current cohort closes to applications on 4 October</b>, tomorrow; later cohorts run regularly.</div>
+      <div style="padding-top:8px;"><a href="https://bluedot.org/courses/ai-governance" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Open course &rsaquo;</a></div>
+     </td>
+    </tr>
+    <tr>
+     <td style="padding:14px 26px;border-bottom:1px solid #e4e8ed;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#0B1220;">Machine translation in language learning and teaching</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding:2px 0 4px 0;">The Open University (OpenLearn) &middot; Free, statement of participation included &middot; 12 hours, introductory</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.5;">Using freely available machine translation tools, judging the quality of what comes back, and the responsible-use questions that follow &mdash; the closest free structured material to today&rsquo;s 60-language transcription and 23-language speech pricing. The page states &ldquo;Free course&rdquo; and a &ldquo;Free statement of participation on completion.&rdquo; It is pedagogy rather than evaluation research, so treat it as practical MT use and not as a course on COMET or BLEU.</div>
+      <div style="padding-top:8px;"><a href="https://www.open.edu/openlearn/languages/machine-translation-language-learning-and-teaching" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Open course &rsaquo;</a></div>
+     </td>
+    </tr>
+
+<!-- ===== FOOTER ===== -->
+    <tr>
+     <td bgcolor="#0B1220" style="padding:22px 26px;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#ffffff;letter-spacing:1.5px;">THE KNOWN <span style="color:#3DA5E0;">GOOD</span> NEWS</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#7d8b9c;padding-top:5px;letter-spacing:.5px;text-transform:uppercase;">Daily AI Intelligence Brief</div>
+      <div style="border-top:1px solid #1e2c3f;margin:16px 0 14px 0;font-size:0;line-height:0;">&nbsp;</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#7d8b9c;line-height:1.9;">
+       <a href="https://theknowngood.com" style="color:#a8b6c6;text-decoration:underline;">Unsubscribe</a>
+       <span style="color:#3c4b5f;">&nbsp;&middot;&nbsp;</span>
+       <a href="https://theknowngood.com/terms/" style="color:#a8b6c6;text-decoration:underline;">Terms of Use</a>
+       <span style="color:#3c4b5f;">&nbsp;&middot;&nbsp;</span>
+       <a href="https://theknowngood.com/privacy/" style="color:#a8b6c6;text-decoration:underline;">Privacy Policy</a>
+       <span style="color:#3c4b5f;">&nbsp;&middot;&nbsp;</span>
+       <a href="https://theknowngood.com" style="color:#a8b6c6;text-decoration:underline;">theknowngood.com</a>
+       <span style="color:#3c4b5f;">&nbsp;&middot;&nbsp;</span>
+       <a href="https://kkierii.github.io/TKG_News/archive/" style="color:#a8b6c6;text-decoration:underline;">Archive</a>
+      </div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#66748a;padding-top:12px;line-height:1.6;">
+       You are receiving this because you subscribed at theknowngood.com.
+      </div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#4f5d70;padding-top:10px;line-height:1.6;">
+       The Known Good aggregates publicly published benchmark data. We do not run our own evaluations.
+       External links are not endorsements and we accept no payment for placement or coverage.
+      </div>
+     </td>
+    </tr>
+
+   </table>
+  </td>
+ </tr>
+</table>
+</body></html>
