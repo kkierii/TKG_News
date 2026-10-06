@@ -1,0 +1,263 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The Known Good News — October 6, 2026</title><meta name="description" content="The Known Good News for Tuesday, October 6, 2026: Langflow scores 9.9 for OS command injection through MCP server config, reachable with no account on its documented default"></head><body style="margin:0;background:#eef1f4;">
+<!--
+  THE KNOWN GOOD NEWS — LOCKED TEMPLATE v1
+  640px table layout, inline CSS, email-safe. Masthead = hosted PNG banner.
+  Daily generation swaps content only. Do not change layout, colors, or fonts.
+-->
+<table width="100%" cellpadding="0" cellspacing="0" style="margin:0;padding:0;">
+ <tr>
+  <td align="center" bgcolor="#eef1f4" style="padding:18px 10px;">
+
+   <table width="640" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="width:640px;max-width:640px;border:1px solid #d5dae0;">
+
+    <!-- ===== MASTHEAD ===== -->
+    <tr>
+     <td bgcolor="#0B1220" style="padding:0;font-size:0;line-height:0;">
+      <img src="https://raw.githubusercontent.com/kkierii/TKG_News/main/images/TKG_Banner.png" width="640" alt="The Known Good News — daily AI intelligence brief covering models, AI security, policy, chips and infrastructure, research, and incidents" style="display:block;width:100%;max-width:640px;height:auto;border:0;" />
+     </td>
+    </tr>
+
+    <!-- ===== DATE BAR + EDITOR NOTE ===== -->
+    <tr>
+     <td bgcolor="#f2f5f8" style="padding:11px 26px;border-top:3px solid #0271B8;border-bottom:1px solid #dde3e9;">
+      <table width="100%" cellpadding="0" cellspacing="0">
+       <tr>
+        <td style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0B1220;">Tuesday, October 6, 2026</td>
+        <td align="right" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#5a6472;">Daily Edition</td>
+       </tr>
+      </table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;padding-top:6px;">Three threads. Model Context Protocol plumbing is where this week&rsquo;s critical bugs live &mdash; Langflow shipped a 9.9 that runs an attacker&rsquo;s shell command with no account needed on its documented default, and Grafana and Dify filed their own MCP file-read and SSRF records the same day; Reflection AI announced a 501B-parameter Apache-2.0 model whose weights do not exist publicly yet; and two papers landed on the same afternoon arguing that the benchmarks used to clear frontier models cannot separate memorised advisories from real capability, and that roughly 60% of correct vulnerability verdicts come wrapped in fabricated reasoning. For the third day in a row no AI-specific policy document published anywhere we check. Our own Movers table printed four rows of seventeen.</div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:26px 26px 6px 26px;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;letter-spacing:1px;color:#0B1220;text-transform:uppercase;border-bottom:2px solid #0B1220;padding-bottom:6px;">Featured</div>
+     </td>
+    </tr>
+
+    <tr>
+     <td bgcolor="#f4f7fa" style="padding:14px 26px 22px 26px;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#0271B8" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Breaking</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:19px;font-weight:bold;color:#0B1220;line-height:1.3;padding:10px 0 4px 0;">Langflow scores 9.9 for OS command injection through MCP server config, reachable with no account on its documented default</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:8px;">CVE-2026-105697, GitHub as CNA &middot; published 5 October 2026, 20:16 UTC</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#2b3138;line-height:1.55;padding-bottom:9px;">CVE-2026-105697 was published on 5 October 2026 at 20:16 UTC with GitHub as the assigning CNA, scored <strong>9.9 critical</strong> on <strong>CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H</strong> and classified CWE-78, OS command injection. Before Langflow 1.10.3, the MCP stdio transport launched whatever command and arguments a user placed in an MCP server configuration &mdash; no allowlist, and wrapped in <strong>bash -c &quot;exec {command} ...&quot;</strong>. The record states the command runs on the Langflow host as the Langflow process user as soon as Langflow tries to connect to that server, which includes merely listing servers or loading tools, and that it runs <em>even when the interface then reports that the stdio server failed to start</em>. Affected are langflow from 1.1.2 to before 1.10.3, langflow-base from 0.1.2 to before 0.10.3, and lfx before 1.10.3; the fixes are 1.10.3, 0.10.3 and 1.10.3.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#2b3138;line-height:1.55;padding-bottom:9px;"><strong>The default configuration removes the authentication requirement entirely.</strong> The CVSS vector says PR:L, privileges required &mdash; and the record then explains why that understates it: &ldquo;With the default LANGFLOW_AUTO_LOGIN=true, GET /api/v1/auto_login hands out a token without credentials, so on an exposed instance running the default configuration this is reachable without an account.&rdquo; Langflow documents AUTO_LOGIN as a development-only setting. With it disabled, the record says any authenticated non-admin user can still exploit it. Two reachable paths are named: the MCP server settings screen, including POST and PATCH to <strong>/api/v2/mcp/servers/{server_name}</strong>, and building a flow with the MCP Tools component.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#2b3138;line-height:1.55;padding-bottom:9px;"><strong>One of five Langflow records published within forty minutes, and two of them conflict.</strong> CVE-2026-105740 carries the <em>same</em> 9.9 score and the same vector, describes the same bash -c path, and says it is fixed in 1.9.0 &mdash; affecting versions before 1.9.0 only. CVE-2026-105697 says versions up to 1.10.2 are affected. Both cite pull request 12290; 105697 also cites pull request 14036. The straightforward reading is that 1.9.0 fixed one route and the component route survived to 1.10.3, but <strong>neither record says that</strong>, and as filed the two give different answers to which version is safe. Also published that evening: CVE-2026-105741, an <strong>X-Forwarded-For</strong> spoof that defeats the local-only check on the MCP install endpoint and writes a client config file to disk (7.1, versions 1.5.0 to before 1.10.3), plus CVE-2026-105699 and CVE-2026-105698 at 7.1 and 5.4.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#2b3138;line-height:1.55;padding-bottom:9px;"><strong>Two more MCP records the same day, from two other vendors.</strong> Grafana published CVE-2026-89039 against <strong>mcp-k6</strong> at 6.5 (CWE-22 and CWE-424): a caller who can invoke the <strong>convert_playwright_script</strong> prompt passes a bare file path and receives any file the server user can read, with SSH keys and cloud credentials named in the advisory, and the working-directory restriction on @-prefixed paths defeated by a symlink. Affected 0.3.0 to 0.7.0, finder credited as bebold6133. And CVE-2026-105762 assigned an unauthenticated SSRF in Dify&rsquo;s <strong>/console/api/remote-files/upload</strong> at 8.3 &mdash; though see the Brief below, because that one is not new.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#2b3138;line-height:1.55;padding-bottom:9px;"><strong>What none of these records says.</strong> No exploitation in the wild is reported for any of them, and no record carries a solutions, timeline or credits field except Grafana&rsquo;s finder credit. The Langflow GitHub advisory page itself shows a publication date of 28 September, ahead of the 5 October CVE records. We did not run any proof of concept, and the 9.9 and the auto-login description are the CNA&rsquo;s own characterisation, read from the CVE record rather than reproduced by us.</div>
+      <div style="padding-top:12px;"><a href="https://github.com/langflow-ai/langflow/security/advisories/GHSA-w794-rj3p-xv45" style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#0271B8;text-decoration:none;">Read the GitHub advisory &rsaquo;</a></div>
+      <div style="padding-top:14px;margin-top:12px;border-top:1px solid #dde3e9;font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#5a6472;line-height:1.6;">Related from Field Notes &middot; <a href="https://blog.theknowngood.com/i-handed-claude-code-the-keys-turns-out-i-m-not-the-only-one-using-them" style="color:#0271B8;text-decoration:none;font-weight:bold;">I Handed Claude Code the Keys. Turns Out I&rsquo;m Not the Only One Using Them &rsaquo;</a></div>
+     </td>
+    </tr>
+
+<!-- ===== THE BRIEF ===== -->
+    <tr>
+     <td style="padding:26px 26px 6px 26px;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;letter-spacing:1px;color:#0B1220;text-transform:uppercase;border-bottom:2px solid #0B1220;padding-bottom:6px;">The Brief</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:6px;line-height:1.5;">Models &amp; Releases &middot; AI Security &middot; Policy &amp; Regulation &middot; Chips &amp; Infrastructure &middot; Research &middot; Incidents</div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Models &amp; Releases</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">Reflection AI announces Beam at 501B total and 23B active parameters, Apache 2.0, with weights still to come</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">Reflection AI &middot; 5 October 2026</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">Reflection AI published a post on 5 October announcing Beam, described as a sparse mixture-of-experts model with <strong>501 billion total and 23 billion active parameters</strong>, with context extended to <strong>1M tokens</strong> during midtraining. The post states pretraining on 23.8 trillion tokens of web and proprietary licensed data using 6,144 NVIDIA GB300 NVL72 GPUs in under four weeks, and a reinforcement learning phase on 10.5K GB300 GPUs over four weeks across more than 100 million rollouts. The benchmark table reads SWE-Bench Verified 80.9, Terminal Bench v2.1 80.1, SWE Bench Pro v2-Hard 77.2, SWE Bench Pro v1 65.5, SWEBench Multilingual 78.0, SWE Atlas Codebase QnA 34.6 and DeepSWE v1.1 44.4, with GLM-5.2 and Qwen 3.8-Max among the comparisons. Weights, a technical report, a model card and developer artifacts are promised under Apache 2.0 &ldquo;later this month&rdquo;.<br><br><strong>This is an announcement, not a release.</strong> We searched Hugging Face for a Reflection AI repo and found none, and the post carries no weights location, no pricing, no API rates and no Hugging Face link. Every benchmark figure above is Reflection&rsquo;s own, self-reported, with no independent evaluation available. Access today is a signup form.</div>
+      <div style="padding-top:10px;"><a href="https://reflection.ai/blog/introducing-beam" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">AI Security</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">Grafana assigns a CVE to an MCP prompt that returns any file the server can read, including SSH keys</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">Grafana Labs security advisory, CVE-2026-89039 &middot; published 5 October 2026</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">Grafana, acting as its own CNA, published CVE-2026-89039 against <strong>mcp-k6</strong> on 5 October at 14:52 UTC, scored <strong>6.5 medium</strong> on <strong>CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N</strong>. A caller able to invoke the <strong>convert_playwright_script</strong> prompt can pass a bare file path as the <strong>playwright_script</strong> argument and receive the contents of any file readable by the user running the server; the advisory names SSH keys and cloud credentials in that user&rsquo;s home directory. The working-directory restriction that applies to @-prefixed paths can be bypassed with a symbolic link inside the working directory pointing outside it. The affected range is 0.3.0 to 0.7.0, the finder is credited as bebold6133 (Researcher), and the weaknesses are listed as CWE-22 and CWE-424.<br><br><strong>The record is thinner than the score suggests.</strong> It carries no workaround and an empty solutions field, so the fixed version comes from the advisory page rather than the CVE record. <strong>CWE-424 appears as a bare identifier with no description text.</strong> No in-the-wild exploitation is stated anywhere in the record; the &ldquo;Exploitation: none&rdquo; reading in circulation is CISA&rsquo;s own SSVC assessment as of 5 October, not Grafana&rsquo;s finding.</div>
+      <div style="padding-top:10px;"><a href="https://grafana.com/security/security-advisories/cve-2026-89039" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Research</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">Preprint: public vulnerability benchmarks cannot separate prior exposure from capability, authors test on undisclosed bugs</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">arXiv 2610.06584 (Heldt, Turk, Landolt, Fritz) &middot; submitted 5 October 2026, 16:00 UTC</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">The abstract argues that release decisions for frontier AI systems increasingly rely on cyber capability benchmarks, while public vulnerability benchmarks can expose agents to already-published advisories, exploits and fixes &mdash; making prior exposure indistinguishable from capability. The authors evaluate open-weight and proprietary models on exploit generation, vulnerability repair and subsequent attacks in <strong>five nonpublic software environments</strong>, including vulnerabilities they say they privately disclosed while those remained unpatched, and state that <strong>deterministic graders developed and reviewed by researchers, not LLM judges</strong>, set the task scores. Repair scores exceed attack scores in two of the five nonpublic environments and fall below them in three. After an initial exploit is stopped, another exploit succeeds in <strong>92 of 524</strong> defender test intervals.<br><br><strong>What is not established.</strong> This is an 8-page preprint with one figure and no peer-review status shown, the experiments are the authors&rsquo; own, and we read the arXiv API record and abstract rather than the paper. <strong>The abstract does not name a single model tested</strong>, so the &ldquo;substantial variation across systems&rdquo; it reports cannot be attributed to any vendor. The authors describe the 524 intervals as non-independent, so that figure is not 524 separate trials.</div>
+      <div style="padding-top:10px;"><a href="https://arxiv.org/abs/2610.06584" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Chips &amp; Infrastructure</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">TeraWulf doubles contracted power at its Kentucky AI campus to 1 GW and pulls the second phase into 2029</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">TeraWulf Inc., Form 8-K Item 8.01 and Exhibit 99.1 &middot; filed 5 October 2026</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">TeraWulf disclosed that its wholly-owned subsidiary DB Long Hunts Data LLC entered into amended and restated agreements with Kentucky Power, an American Electric Power company, raising contracted power capacity at the <strong>Muskie Data Campus</strong> in eastern Kentucky from <strong>500 MW to 1 GW</strong>. The amendment moves planned delivery of the second 500 MW phase from 2030 to <strong>2029</strong>, subject to Kentucky Public Service Commission approval and Kentucky Power&rsquo;s construction schedule; the first 500 MW phase remains targeted to begin ramping in 2028. The agreements were executed 1 October and announced 5 October. In the same filing, TeraWulf says it intends to upsize its existing senior secured revolving credit facility and is seeking additional senior secured debt to support letter-of-credit needs tied to its utility power partnerships.<br><br><strong>What the filing does not say.</strong> No term length, price or tariff for the Kentucky Power agreements, and no dollar size, lender or rate for either the revolver upsize or the new debt &mdash; the 8-K adds that there is no assurance the financing is obtained. <strong>No tenant or customer is named</strong>; the chief executive refers only to &ldquo;prospective customers&rdquo;. The 2 GW figure in circulation is a potential the company &ldquo;continues to evaluate&rdquo;, not contracted capacity. The 8-K calls them &ldquo;transmission infrastructure and energy service agreements&rdquo; while the press release describes a single &ldquo;electric service agreement&rdquo;.</div>
+      <div style="padding-top:10px;"><a href="https://www.sec.gov/Archives/edgar/data/1083301/000162828026064757/wulf-20261001.htm" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Research</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">Preprint: twenty deepfake detectors fall from 99.5% to 76% accuracy against newer generators, and below 2% under attack</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">arXiv 2610.05870 (Hashmi, Elsayed, Alam, Poppi, Lukas) &middot; submitted 5 October 2026, 06:36 UTC</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">The authors evaluate <strong>twenty deepfake detectors against ten generators</strong> released over the last four years and report accuracy decreasing over that span, from a near-perfect <strong>99.5% to 76%</strong>. Adversarial perturbations reduce every baseline detector to <strong>below 2% accuracy</strong>, which the abstract describes as effectively inverting the detector&rsquo;s assigned label. Their argument is that content alone cannot reveal provenance, because a generator can reproduce authentic content exactly through memorisation; they instead propose a calibrated prediction of whether authenticity is plausibly deniable, where a faithful reconstruction by any known generator establishes deniability. At a calibration admitting at most 1% of generated content wrongly certified, they report most baselines reach near-zero recall, including the strongest at 93% accuracy. Of 3,000 Reddit images, <strong>1,116 resist reproduction by a 2022 generator but only 55 to 79 resist 2024 generators</strong>.<br><br><strong>What is not established.</strong> A preprint with no peer-review status shown; the experiments are the authors&rsquo; own and we read the abstract rather than the paper. The authors themselves bound the robustness claim to the <strong>evaluated bounded-perturbation attack space</strong> and state it does not cover arbitrary adversarial transformations. The abstract names none of the twenty detectors or ten generators, and does not say how the 3,000 Reddit images were selected or labelled.</div>
+      <div style="padding-top:10px;"><a href="https://arxiv.org/abs/2610.05870" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Chips &amp; Infrastructure</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">Flex sells $2.0bn of convertible preferred in Axiom, its spin-off power unit, with a 115% redemption backstop</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">Flex Ltd., Form 8-K Items 1.01, 2.03, 3.02 and 8.01 &middot; filed 5 October 2026</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">Flex disclosed that on 2 October it, Axiom Solutions International, GC Venture XIII (ASI), L.P. (&ldquo;General Catalyst&rdquo;) and other investors entered a Series A Convertible Preferred Stock Investment Agreement, under which the investors will buy <strong>200,000 shares at $10,000 each, $2,000,000,000 in total</strong>, in a private placement. Axiom is Flex&rsquo;s Cloud and Power Infrastructure business, which Flex intends to separate as an independent public company in the first quarter of 2027. The money is tied to the pending acquisition of EPC Power Corp., under a stock purchase agreement dated 3 September 2026 and expected to close in Q4 2026. If the spin-off is not consummated by <strong>31 December 2027</strong>, Flex guarantees redemption at <strong>115% of the purchase price in cash or 125% in Flex ordinary shares</strong>, with any unpaid portion accruing interest at <strong>12% a year</strong>.<br><br><strong>What is in the press release but not the 8-K.</strong> The <strong>$37.5bn enterprise value</strong> for Axiom and the co-investor <strong>Koch Equity Development</strong> appear in Exhibit 99.1; the 8-K body names only General Catalyst and &ldquo;other investors&rdquo;. The dividend rate and conversion price sit in Exhibit 10.1, which we did not open, and the EPC Power purchase price is not in the sections we read. Closing is conditional on Hart-Scott-Rodino expiry and other regulatory approval. Nothing in the filing names a GPU, a chip or a specific data-centre build.</div>
+      <div style="padding-top:10px;"><a href="https://www.sec.gov/Archives/edgar/data/866374/000119312526413173/d123485d8k.htm" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Research</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">Preprint: a manual audit finds roughly 60% of correct LLM vulnerability verdicts carry fabricated or unverifiable claims</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">arXiv 2610.06366 (Hu, Ahir, Ni, Jia) &middot; submitted 5 October 2026, 14:03 UTC</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">The abstract reports that the authors&rsquo; manual audit found <strong>approximately 60% of correct vulnerability verdicts accompanied by fabricated or unverifiable claims</strong>, and that free-form chain-of-thought explanations let reasoning errors evade LLM-as-a-judge evaluation. Their framework, VERA, has the model emit a <strong>Structured Reasoning Record</strong> encoding tracked pointers, memory operations and state transitions in machine-readable fields, which a multi-stage judge audits against <strong>eight reasoning failure modes</strong> using deterministic checks, reserving model calls for semantic interpretation. They report that reasoning flaws occur in correct verdicts just as frequently as in incorrect ones, and that VERA exposes <strong>87% of reasoning errors</strong> that free-form LLM-as-judge systematically misses.<br><br><strong>What is not established, and the 60% needs care.</strong> The abstract says &ldquo;approximately&rdquo;, so it is not a precise figure, and <strong>it gives no sample size, no model names and no dataset</strong> for the manual audit that produced it. This is a preprint with no peer-review status shown and no page count in its arXiv record, the experiments are the authors&rsquo; own, and we read the abstract rather than the paper.</div>
+      <div style="padding-top:10px;"><a href="https://arxiv.org/abs/2610.06366" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">AI Security</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">A CVE published 5 October for an unauthenticated SSRF in Dify turns out to describe a May advisory, patched in May</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">CVE-2026-105762, GitHub as CNA &middot; CVE published 5 October 2026; advisory published 19 May 2026</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">CVE-2026-105762 was published on 5 October 2026 at 23:04 UTC, scored <strong>8.3 high</strong> on <strong>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L</strong> and classified CWE-918, server-side request forgery. It describes the <strong>/console/api/remote-files/upload</strong> endpoint in Dify accepting an attacker-controlled URL <em>without authentication</em> and causing the server to retrieve it, allowing requests to internal services or cloud metadata endpoints and use of the server as a network pivot. Affected versions are before 1.13.0 and the fix is 1.13.0. The reporter is credited as Wat4rFlow, and the advisory page carries a proof-of-concept request.<br><br><strong>The CVE is five days old; the vulnerability is five months old.</strong> <strong>The GitHub advisory page shows a publication date of 19 May 2026</strong>, with a maintainer note dated 22 June 2026 correcting the patched version. So this is a late CVE assignment to an already-disclosed and already-patched issue, not a fresh exposure &mdash; and we are flagging it precisely because the October CVE date is what feeds vulnerability trackers and will read as new in every one of them. Anyone on 1.13.0 or later has been fixed since spring. No exploitation in the wild is stated, and the CVE record carries no credits, solutions or timeline fields.</div>
+      <div style="padding-top:10px;"><a href="https://github.com/langgenius/dify/security/advisories/GHSA-8235-vv5j-mmvg" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+<!-- ===== MOVERS ===== -->
+    <tr>
+     <td style="padding:26px 26px 6px 26px;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;letter-spacing:1px;color:#0B1220;text-transform:uppercase;border-bottom:2px solid #0B1220;padding-bottom:6px;">Movers &mdash; From The Known Good</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:6px;line-height:1.5;">Blended 3:1 price per 1M tokens, from our own ingest of OpenRouter published pricing. 17 models moved across 32 logged legs in the 6 October window. Four are printed; thirteen are withheld and named below.</div>
+     </td>
+    </tr>
+    <tr>
+     <td style="padding:14px 26px 4px 26px;">
+      <table width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #e4e8ed;">
+       <tr bgcolor="#f2f5f8">
+        <td style="padding:8px 10px;font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:bold;color:#5a6472;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid #e4e8ed;">Model</td>
+        <td style="padding:8px 10px;font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:bold;color:#5a6472;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid #e4e8ed;">Metric</td>
+        <td align="right" style="padding:8px 10px;font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:bold;color:#5a6472;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid #e4e8ed;">Change</td>
+       </tr>
+       <tr>
+        <td style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#0B1220;border-bottom:1px solid #eef1f4;">Qwen: Qwen3 235B A22B Instruct 2507</td>
+        <td style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;border-bottom:1px solid #eef1f4;">$0.15 &rarr; $0.20 blended</td>
+        <td align="right" style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#b3261e;border-bottom:1px solid #eef1f4;">+34%</td>
+       </tr>
+       <tr>
+        <td style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#0B1220;border-bottom:1px solid #eef1f4;">Qwen: Qwen3.5-35B-A3B</td>
+        <td style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;border-bottom:1px solid #eef1f4;">$0.36 &rarr; $0.25 blended</td>
+        <td align="right" style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#0a7d4b;border-bottom:1px solid #eef1f4;">&minus;32%</td>
+       </tr>
+       <tr>
+        <td style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#0B1220;border-bottom:1px solid #eef1f4;">Qwen: Qwen3.5 397B A17B</td>
+        <td style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;border-bottom:1px solid #eef1f4;">$1.29 &rarr; $1.09 blended</td>
+        <td align="right" style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#0a7d4b;border-bottom:1px solid #eef1f4;">&minus;16%</td>
+       </tr>
+       <tr>
+        <td style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#0B1220;border-bottom:1px solid #eef1f4;">DeepSeek: DeepSeek V3.2</td>
+        <td style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;border-bottom:1px solid #eef1f4;">$0.30 &rarr; $0.32 blended</td>
+        <td align="right" style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#b3261e;border-bottom:1px solid #eef1f4;">+5%</td>
+       </tr>
+      </table>
+      <div style="padding-top:10px;"><a href="https://theknowngood.com/leaderboard" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">See the full leaderboard &rsaquo;</a></div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:10px;line-height:1.55;">Each printed row moved on a single logged leg, so every percentage above is the one the changelog published rather than anything we computed. We recomputed each close from the catalogue&rsquo;s own 3:1 components as a cross-check and all four agree: Qwen3 235B A22B Instruct 2507 at $0.205 from $0.09 input and $0.55 output, Qwen3.5-35B-A3B at $0.2475 from $0.08 and $0.75, Qwen3.5 397B A17B at $1.0875 from $0.45 and $3.00, DeepSeek V3.2 at $0.315 from $0.28 and $0.42. Every close is a price the model has not held before in our history.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:10px;line-height:1.55;"><strong>Two live demonstrations of why we never derive a percentage from displayed prices.</strong> Qwen3 235B A22B Instruct 2507 reads $0.15 to $0.20, which computes to +33.3% from the rounded figures; the changelog&rsquo;s own percentage, taken on the unrounded values, is +34%. DeepSeek V3.2 reads $0.30 to $0.32, which computes to +6.7%; the published figure is +5%. We print the site&rsquo;s percentage in both cases. Deriving from the two-decimal display would have shipped two wrong numbers today, as it would have on 28 August.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:10px;line-height:1.55;"><strong>Three of the four are a model&rsquo;s first logged price move ever, and that is a weaker signal than it looks.</strong> Qwen3.5 397B A17B, Qwen3 235B A22B Instruct 2507 and DeepSeek V3.2 each have exactly one leg in our whole history, so there is no pattern to test them against; Qwen3.5-35B-A3B has two, and today continues a decline from $0.45. Yesterday we published a first-ever single leg on Meta Llama 3.3 70B Instruct and noted the oscillator filter could not fire on it &mdash; it reversed exactly the next morning. Treat all four as prices that have moved, not prices that have settled.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:10px;line-height:1.55;"><strong>Withheld because the net would have to be derived (8).</strong> DeepSeek Pro Latest ran $1.23 to $1.61 to $1.72 to $1.25 to $1.16 across four legs; DeepSeek V4.1 Flash $0.52 to $0.60 to $0.33 to $0.37 to $0.34, also four; DeepSeek Flash Latest $0.60 to $0.30 to $0.33 to $0.31; Z.ai GLM Flash Latest $0.15 to $0.14 to $0.19 to $0.14; DeepSeek V4 Pro 0813 $0.99 to $1.98 to $0.99 to $1.98; MoonshotAI Kimi Latest $3.96 to $3.49 to $3.75; and two that returned exactly to their opening price, DeepSeek V4 Flash Latest ($0.32 to $0.36 and back) and Z.ai GLM 5.3 Flash ($0.24 to $0.15 and back). A multi-leg net has no published percentage and we will not manufacture one.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:10px;line-height:1.55;"><strong>The biggest number in today&rsquo;s data is a round trip that happens to have stopped on the high side.</strong> DeepSeek V4 Pro 0813 doubled, halved and doubled again inside one day &mdash; $0.99 to $1.98 at +100%, back to $0.99 at &minus;50%, then $1.98 again at +100% &mdash; and the catalogue confirms the close exactly at $1.98 from $1.32 input and $3.96 output. A naive read of the day gives +100% on a flagship DeepSeek model. Three legs between two prices gives nothing. Worth noting that this same model was withheld yesterday on a catalogue contradiction at a different price; today the catalogue agrees to the cent and the problem is the routing instead.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:10px;line-height:1.55;"><strong>Withheld on catalogue contradictions (2).</strong> MoonshotAI Kimi Latest closes at $3.75 in the changelog while the catalogue prices it at $3.865 from $0.82 input and $13.00 output &mdash; eleven and a half cents. MoonshotAI Kimi K3 closes at $4.14 against a catalogue $4.1225 from $0.83 and $14.00, and that one-and-three-quarter cents is <em>the sole reason it is withheld</em>: it is otherwise a clean single leg at &minus;6%. The gap is larger than two-decimal rounding can explain, so one of the two figures is an ingest artifact and we do not know which. Fifth consecutive day a catalogue contradiction has appeared, now on a fourth and fifth distinct model.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:10px;line-height:1.55;"><strong>Withheld as two-value oscillators (4).</strong> Tencent Hy3 has logged 15 legs and only ever held $0.14 and $0.23; today returns to $0.23. Tencent Hy4 preview has logged 12 and only ever held $1.13 and $1.25; today returns to $1.25. Qwen3 30B A3B Instruct 2507 has logged 8 and only ever held $0.08 and $0.15; today returns to $0.15. Z.ai GLM 5.3 Flash has logged exactly two legs, both today, between $0.24 and $0.15 and back. None broke out to a price it has never held, which is the only condition under which we print an oscillator.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:10px;line-height:1.55;"><strong>Withheld on a flap endpoint (1).</strong> Google Gemma 4 26B A4B moved $0.12 to $0.14 at +18% on a single clean leg, and the catalogue confirms $0.1425 from $0.09 and $0.30. But $0.14 is one of only three prices it has ever held across 12 legs, and it has closed there repeatedly; the +18% records which of three values the series stopped on rather than a price change. We withheld it yesterday too, then as an oscillator.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:10px;line-height:1.55;"><strong>The reconciliation check, and it found something.</strong> We re-read all three of yesterday&rsquo;s printed rows against this morning&rsquo;s changelog, because the window overlaps the previous run. All three legs are still there at exactly the figures we published, so no number was wrong. <strong>But two of the three now have a second 5 October leg that did not exist when we read the changelog yesterday.</strong> Z.ai GLM 5.2, which we printed at +96% to $4.02, also ran $4.02 down to $3.03 at &minus;25%; Qwen3.6 27B, which we printed at &minus;12% to $0.92, also ran $0.92 up to $1.05 at +15% &mdash; above where that day started. Z.ai GLM 5.3 still carries its single leg and stands unchanged. The changelog records dates without timestamps, so a day is not closed when we read it in the morning: what we publish is accurate as a leg and may not be where the day ended. We would rather tell you that than let you find it.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#8a93a0;padding-top:8px;line-height:1.5;">Price data via OpenRouter. Benchmark data includes Epoch AI (CC BY). Catalogue and price history from <a href="https://theknowngood.com" style="color:#8a93a0;">The Known Good</a>, CC BY 4.0.</div>
+     </td>
+    </tr>
+
+<!-- ===== SKILL UP — FREE TRAINING ===== -->
+    <tr>
+     <td style="padding:26px 26px 6px 26px;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;letter-spacing:1px;color:#0B1220;text-transform:uppercase;border-bottom:2px solid #0B1220;padding-bottom:6px;">Skill Up &mdash; Free Training</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:6px;line-height:1.5;">Four free courses tied to today&rsquo;s threads. We check that every page loads and states its own terms before it goes in, and drop anything that does not. Dropped today: Schneider Electric University&rsquo;s data-centre power courses, whose individual pages redirect to the home page so no per-course terms can be read; Cisco Skills for All and Google skills.google, both JavaScript shells or silent on cost; Coursera&rsquo;s prompt-injection course, whose audit terms are ambiguous; and Fortinet and Microsoft Learn, where we could not find a page stating its own terms. <strong>Deepfake detection and datacentre power have no verifiable free course today</strong> &mdash; the only deepfake results were paid. Not endorsements. We accept no payment for placement or coverage, and use no affiliate links.</div>
+     </td>
+    </tr>
+    <tr>
+     <td style="padding:14px 26px;border-bottom:1px solid #e4e8ed;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#0B1220;">Web Security Academy &mdash; SSRF, file path traversal, OS command injection and Web LLM attacks</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding:2px 0 4px 0;">PortSwigger &middot; Self-paced with interactive labs &middot; No fixed duration &middot; Beginner to advanced &middot; Free &mdash; no course certificate offered (a separate paid certification exam exists)</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.5;">The single closest match to today&rsquo;s issue: four of its topic tracks are exactly the defect classes in the Featured block and the Brief &mdash; OS command injection (Langflow), file path traversal (Grafana mcp-k6), SSRF (Dify) and a Web LLM attacks track covering prompt injection and excessive agency. The site states &ldquo;The Web Security Academy is a free online training center for web application security&hellip; You can access everything (for free).&rdquo; There is no completion certificate; the Burp Suite Certified Practitioner credential is a separate purchased exam that also requires a Burp Suite Professional subscription, which is why we label it this way rather than &ldquo;certificate included&rdquo;. It does not cover MCP specifically.</div>
+      <div style="padding-top:8px;"><a href="https://portswigger.net/web-security" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Open course &rsaquo;</a></div>
+     </td>
+    </tr>
+    <tr>
+     <td style="padding:14px 26px;border-bottom:1px solid #e4e8ed;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#0B1220;">Securing Large Language Models (LLMs)</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding:2px 0 4px 0;">Alison &middot; Self-paced &middot; 1.5&ndash;3 hours &middot; Beginner &middot; Free audit (certificate paid)</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.5;">Covers LLM vulnerabilities, adversarial attacks, defences and privacy, at an introductory level. <strong>One honest caveat on the label:</strong> the course page itself states no certificate price, only that the course is CPD-accredited. The label above comes from Alison&rsquo;s own site-wide policy page, which states that after completing a course and passing the assessment &ldquo;you can purchase a Digital or Printed Certificate, but this is optional.&rdquo; We would normally drop a course whose own page is silent on terms; we are including this one because the provider states the policy explicitly elsewhere, and telling you where the label came from. It is not specific to agent frameworks or MCP.</div>
+      <div style="padding-top:8px;"><a href="https://alison.com/course/securing-large-language-models-llms" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Open course &rsaquo;</a></div>
+     </td>
+    </tr>
+    <tr>
+     <td style="padding:14px 26px;border-bottom:1px solid #e4e8ed;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#0B1220;">Model Context Protocol (MCP) Course</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding:2px 0 4px 0;">Hugging Face, in partnership with Anthropic &middot; Self-paced &middot; 5 chapters, about 3&ndash;4 hours a week &middot; Beginner &middot; Free</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.5;">Three of today&rsquo;s five security records are MCP plumbing &mdash; a stdio transport that executes an arbitrary command, an install endpoint that trusts a spoofed header, a prompt that reads arbitrary files. This teaches how MCP servers and clients actually work, which is the prerequisite for reading those advisories rather than just counting them. <strong>It is not a security course</strong> and does not teach the defects above; the fit is background, not remediation. The page states &ldquo;This free course, built in partnership with Anthropic&hellip;&rdquo; and offers audit mode or two certificates, with no fee named anywhere on the page.</div>
+      <div style="padding-top:8px;"><a href="https://huggingface.co/learn/mcp-course/unit0/introduction" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Open course &rsaquo;</a></div>
+     </td>
+    </tr>
+    <tr>
+     <td style="padding:14px 26px;border-bottom:1px solid #e4e8ed;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#0B1220;">Security for Software Development Managers (LFD125)</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding:2px 0 4px 0;">Linux Foundation &middot; Online, self-paced &middot; 1&ndash;2 hours, 90 days&rsquo; access &middot; Beginner &middot; Free, digital badge included</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.5;">The enrolment panel reads &ldquo;$0&rdquo; and lists the quizzes, 90 days of access and the digital badge as included, which is why this one labels cleanly as free including its credential. <strong>The fit is loose</strong> and we would rather say so: it is secure development from a management perspective, with nothing specific to AI, agent frameworks or MCP. It is here because the day&rsquo;s actual lesson &mdash; five advisories from three vendors, two of them disagreeing about which version is fixed &mdash; is a release-process problem as much as a code problem.</div>
+      <div style="padding-top:8px;"><a href="https://training.linuxfoundation.org/training/security-for-software-development-managers-lfd125/" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Open course &rsaquo;</a></div>
+     </td>
+    </tr>
+
+<!-- ===== FOOTER ===== -->
+    <tr>
+     <td bgcolor="#0B1220" style="padding:22px 26px;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#ffffff;letter-spacing:1.5px;">THE KNOWN <span style="color:#3DA5E0;">GOOD</span> NEWS</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#7d8b9c;padding-top:5px;letter-spacing:.5px;text-transform:uppercase;">Daily AI Intelligence Brief</div>
+      <div style="border-top:1px solid #1e2c3f;margin:16px 0 14px 0;font-size:0;line-height:0;">&nbsp;</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#7d8b9c;line-height:1.9;">
+       <a href="https://theknowngood.com" style="color:#a8b6c6;text-decoration:underline;">Unsubscribe</a>
+       <span style="color:#3c4b5f;">&nbsp;&middot;&nbsp;</span>
+       <a href="https://theknowngood.com/terms/" style="color:#a8b6c6;text-decoration:underline;">Terms of Use</a>
+       <span style="color:#3c4b5f;">&nbsp;&middot;&nbsp;</span>
+       <a href="https://theknowngood.com/privacy/" style="color:#a8b6c6;text-decoration:underline;">Privacy Policy</a>
+       <span style="color:#3c4b5f;">&nbsp;&middot;&nbsp;</span>
+       <a href="https://theknowngood.com" style="color:#a8b6c6;text-decoration:underline;">theknowngood.com</a>
+       <span style="color:#3c4b5f;">&nbsp;&middot;&nbsp;</span>
+       <a href="https://kkierii.github.io/TKG_News/archive/" style="color:#a8b6c6;text-decoration:underline;">Archive</a>
+      </div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#66748a;padding-top:12px;line-height:1.6;">
+       You are receiving this because you subscribed at theknowngood.com.
+      </div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#4f5d70;padding-top:10px;line-height:1.6;">
+       The Known Good aggregates publicly published benchmark data. We do not run our own evaluations.
+       External links are not endorsements and we accept no payment for placement or coverage.
+      </div>
+     </td>
+    </tr>
+
+   </table>
+  </td>
+ </tr>
+</table>
+</body></html>
