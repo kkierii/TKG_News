@@ -1,0 +1,244 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The Known Good News — October 9, 2026</title><meta name="description" content="The Known Good News for Friday, October 9, 2026: One prompt to a public AgentCore agent compromised every Bedrock agent in the same AWS account and region"></head><body style="margin:0;background:#eef1f4;">
+<!--
+  THE KNOWN GOOD NEWS — LOCKED TEMPLATE v1
+  640px table layout, inline CSS, email-safe. Masthead = hosted PNG banner.
+  Daily generation swaps content only. Do not change layout, colors, or fonts.
+-->
+<table width="100%" cellpadding="0" cellspacing="0" style="margin:0;padding:0;">
+ <tr>
+  <td align="center" bgcolor="#eef1f4" style="padding:18px 10px;">
+
+   <table width="640" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="width:640px;max-width:640px;border:1px solid #d5dae0;">
+
+    <!-- ===== MASTHEAD ===== -->
+    <tr>
+     <td bgcolor="#0B1220" style="padding:0;font-size:0;line-height:0;">
+      <img src="https://raw.githubusercontent.com/kkierii/TKG_News/main/images/TKG_Banner.png" width="640" alt="The Known Good News — daily AI intelligence brief covering models, AI security, policy, chips and infrastructure, research, and incidents" style="display:block;width:100%;max-width:640px;height:auto;border:0;" />
+     </td>
+    </tr>
+
+    <!-- ===== DATE BAR + EDITOR NOTE ===== -->
+    <tr>
+     <td bgcolor="#f2f5f8" style="padding:11px 26px;border-top:3px solid #0271B8;border-bottom:1px solid #dde3e9;">
+      <table width="100%" cellpadding="0" cellspacing="0">
+       <tr>
+        <td style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0B1220;">Friday, October 9, 2026</td>
+        <td align="right" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#5a6472;">Daily Edition</td>
+       </tr>
+      </table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;padding-top:6px;">An agent platform shipping an overprivileged default role, real money moving into packaging at TSMC and GlobalFoundries, and a Movers table that prints nothing: sixteen models moved, sixteen withheld.</div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:26px 26px 6px 26px;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;letter-spacing:1px;color:#0B1220;text-transform:uppercase;border-bottom:2px solid #0B1220;padding-bottom:6px;">Featured</div>
+     </td>
+    </tr>
+
+    <tr>
+     <td bgcolor="#f4f7fa" style="padding:14px 26px 22px 26px;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#0271B8" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Breaking</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:19px;font-weight:bold;color:#0B1220;line-height:1.3;padding:10px 0 4px 0;">One prompt to a public AgentCore agent compromised every Bedrock agent in the same AWS account and region</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:8px;">Zenity Labs &middot; 8 October 2026</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#2b3138;line-height:1.55;padding-bottom:9px;">Zenity Labs publicly disclosed <strong>AgentCorruption</strong> on 8 October, a chain of flaws in Amazon Bedrock AgentCore through which a single prompt to a public-facing agent could compromise every AgentCore agent in the same AWS account and region.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#2b3138;line-height:1.55;padding-bottom:9px;">The prompt directed an agent that had an outbound-request tool to query the Instance Metadata Service and retrieve credentials for a default IAM execution role whose permissions spanned all AgentCore agents. With those credentials the researchers enumerated and invoked internal agents, read private conversations and long-term memories, downloaded container images and source code, and retrieved credentials held in AWS Secrets Manager and environment variables, among them API keys and OAuth tokens for enterprise and third-party services. They also planted malicious memories, both for persistence and to redirect future conversations to an attacker-controlled destination.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#2b3138;line-height:1.55;padding-bottom:9px;">Zenity reported the findings to AWS on 25 December 2025. AWS has since made IMDSv2 the default for AgentCore deployments and removed agent-invocation, conversation-read and Secrets Manager permissions from the default execution role. Zenity says its own testing confirmed that permission reduction; it does not claim to have retested the IMDSv2 change. No CVE identifiers were assigned, and the research was presented at SecTor 2026 in Toronto.</div>
+      <div style="padding-top:12px;"><a href="https://zenity.io/press-release/zenity-labs-discloses-agentcorruption-a-chain-of-aws-agentcore-flaws" style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#0271B8;text-decoration:none;">Read the Zenity Labs disclosure &rsaquo;</a></div>
+     </td>
+    </tr>
+
+<!-- ===== THE BRIEF ===== -->
+    <tr>
+     <td style="padding:26px 26px 6px 26px;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;letter-spacing:1px;color:#0B1220;text-transform:uppercase;border-bottom:2px solid #0B1220;padding-bottom:6px;">The Brief</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:6px;line-height:1.5;">Models &amp; Releases &middot; AI Security &middot; Policy &amp; Regulation &middot; Chips &amp; Infrastructure &middot; Research &middot; Incidents</div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Models &amp; Releases</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">Google Cloud launches a single Gemini agent, with persistent coworker agents given their own email addresses</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">Google Cloud &middot; 8 October 2026</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">At Gemini at Work 2026 on 8 October, Google Cloud announced the Gemini agent, one enterprise agent that handles chat, autonomous tasks, scheduled work and code generation from a single interface across web, iOS, Android, Windows, Mac, CLI, Google Workspace, Microsoft 365 and Slack. For multi-step jobs running hours or days it spawns temporary sub-agents with their own attested identities, and persistent &ldquo;coworker agents&rdquo; receive their own @agents.company.com email address, storage and scoped access. Jobs route across the Gemini family and Anthropic&rsquo;s Claude models, with governance through Agent Sandbox, Agent Gateway and per-project spend caps in Cloud Billing. Google cited TPU 8i at 80% better price-performance than the prior generation and nearly 500 customers each processing more than one trillion tokens in the past year; no general-availability date and no pricing were given.</div>
+      <div style="padding-top:10px;"><a href="https://cloud.google.com/blog/products/ai-machine-learning/welcome-to-gemini-at-work-2026" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Chips &amp; Infrastructure</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">TSMC September revenue rises 54.6% year on year to NT$511.9 billion</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">TSMC Investor Relations &middot; 8 October 2026</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">TSMC reported September 2026 consolidated net revenue of NT$511,857 million, an increase of 54.6% from September 2025 and a decline of roughly 0.6% from August&rsquo;s NT$514,806 million. Revenue for January through September 2026 totalled NT$3,898,727 million, up 41.1% year on year. Summing the company&rsquo;s own published July, August and September figures gives third-quarter revenue of NT$1,494,243 million, the highest quarterly total in the 2026 monthly series; that sum is our arithmetic, not a figure TSMC prints. TSMC notes that the 2026 figures are unaudited.</div>
+      <div style="padding-top:10px;"><a href="https://investor.tsmc.com/english/monthly-revenue/2026" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">AI Security</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">CrowdStrike ties South Korean bank intrusions to the Chinese agentic pentest tool ARTEX</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">CrowdStrike Intelligence &middot; 7 October 2026</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">CrowdStrike Intelligence published research on 7 October attributing a campaign against South Korean financial organisations to an unidentified actor using ARTEX, a recently released open-source agentic penetration-testing tool developed in China. Activity ran from late September into early October 2026, and reporting describes a breach of one bank&rsquo;s loan progress inquiry service used by financial brokers and a compromise of another bank&rsquo;s employee mobile work-support system, with data exfiltrated. CrowdStrike found the operation through open directories on actor-controlled servers that held Claude Code session histories, ARTEX configuration files and memory files, and reports ARTEX using DeepSeek v4.1-flash as its primary model backend, likely via the reseller xcai[.]pro, while the actor used GLM-5.3 and Grok 4.6 in separate sessions. Infrastructure comprised a Hong Kong-based primary address, an ARTEX instance at 38.244.50[.]120 and nine observed proxies; CrowdStrike assesses with moderate confidence that the actor is a financially motivated Chinese speaker and confirms no victim or record count.</div>
+      <div style="padding-top:10px;"><a href="https://www.crowdstrike.com/en-us/blog/unknown-threat-actor-uses-artex-to-target-south-korean-finance/" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Policy &amp; Regulation</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">Treasury issues its first outbound-investment penalty over an unreported Chinese AI stake</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">U.S. Department of the Treasury &middot; 7 October 2026</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">Treasury announced on 7 October a $200,000 civil penalty against Amidi, LLC, parent of the entity doing business as Plug and Play Tech Center &mdash; the first enforcement penalty under the Outbound Investment Security Program, which took effect 2 January 2025. Treasury said Amidi failed to file a required notification for a 19 April 2025 investment of approximately $92,478 made by a Chinese fund owned by its subsidiary into Shanghai Qiongche Intelligent Technology Company Limited, also known as Noematrix, a Chinese developer of artificial intelligence, robotics and embodied intelligence. The penalty was issued in July 2026, and Treasury said it identified the transaction through routine compliance and market monitoring. The release notes that the Comprehensive Outbound Investment National Security Act of 2025, enacted 18 December 2025, will extend the program&rsquo;s jurisdiction to additional countries and technology sectors.</div>
+      <div style="padding-top:10px;"><a href="https://home.treasury.gov/news/press-releases/sb0652/" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Chips &amp; Infrastructure</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">GlobalFoundries to supply TSMC CoWoS silicon interposers from Malta, New York</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">GlobalFoundries &middot; 8 October 2026</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">GlobalFoundries announced an agreement to supply TSMC with silicon interposers for TSMC&rsquo;s CoWoS advanced packaging ecosystem, in a multi-year deal the company values at $2 billion over an initial five-year term. Production will be added at GF&rsquo;s Malta, New York site, which the company positions as the first U.S.-based source of these advanced packaging components. Volume production is expected to begin ramping in the first half of 2028, and the agreement includes a framework for future capacity expansion. The release names embedded deep trench capacitor components among the supported technologies, and states no wafer volumes and no separate capital expenditure figure; the $2 billion appears in the release summary rather than its body.</div>
+      <div style="padding-top:10px;"><a href="https://www.globenewswire.com/news-release/2026/10/08/3377242/0/en/globalfoundries-reaches-agreement-to-establish-u-s-based-supply-of-silicon-interposers-for-advanced-ai-packaging.html" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">AI Security</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">About 2,100 NVIDIA GPU telemetry hosts found exposed without authentication</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">LAVA &middot; 8 October 2026</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">Security firm LAVA published research on 8 October documenting roughly 2,100 publicly accessible NVIDIA DCGM Exporter hosts reporting more than 12,000 unique GPU UUIDs over plaintext HTTP without authentication, based on four internet scans run between March and May 2026. About a quarter of those hosts also exposed Go&rsquo;s /debug/pprof/ endpoints, the component behind CVE-2026-47483, in which concurrent unauthenticated profiling requests cause uncontrolled resource consumption leading to denial of service and information disclosure. The CVE record itself is not new: assigned by NVIDIA PSIRT and published 28 July 2026, it carries a vendor-assigned CVSS 3.1 base score of 8.2 and lists DCGM Exporter through 4.8.2 and DCGM through 4.5.2 as affected, with NVD status still &ldquo;Awaiting Enrichment&rdquo;. LAVA directs users to DCGM Exporter 4.8.2 or later and to leave --enable-pprof disabled, reproduced the crash in a controlled environment using NVIDIA&rsquo;s official container rather than against public deployments, and puts the exposed hardware &mdash; H100, H200, Blackwell Ultra B300, RTX 4090 and RTX 5090 systems among it &mdash; at over $100 million.</div>
+      <div style="padding-top:10px;"><a href="https://lava.security/research/cve-2026-47483-nvidia-dcgm-exporter-vulnerability" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Research</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">Nature paper retrofits subword language models to raw bytes for under 1% of pretraining compute</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">Nature &middot; 7 October 2026</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">Nature published &ldquo;Retrofitting language models to operate over bytes&rdquo; on 7 October, an open-access paper from Ai2 with collaborators at Cambridge, Edinburgh and the Munich Center for Machine Learning. The method, byteification, converts existing subword-tokenised models to operate on raw UTF-8 bytes using roughly 49.1 billion additional training tokens &mdash; 9.8 billion in the first stage and 39.3 billion in the second &mdash; which the authors describe as under 1% of a typical pretraining budget. Four conversions are reported: Olmo 3 7B to Bolmo 7B, OLMo 2 1B to Bolmo 1B, Qwen3 8B Base to Bwen 8B, and Llama 3 8B to Blama 8B. Bolmo 7B is reported 16.5 points above BLT 7B on STEM evaluations, byteified models gain on the character-level benchmarks CUTE and EXECUTE, and Bwen 8B leads earlier byte-level models in every reported category except GenQA, where it trails TFree-HAT 7B.</div>
+      <div style="padding-top:10px;"><a href="https://www.nature.com/articles/s41586-026-11111-4" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Incidents</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">OpenAI logs six status incidents across two days, the longest just over four hours</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">OpenAI Status &middot; 7&ndash;8 October 2026</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">OpenAI&rsquo;s status page recorded six separate incidents on 7 and 8 October. The longest, &ldquo;Workspace Agents Degraded and Responses Impacted,&rdquo; ran from its first update at 22:52 on 6 October to resolution at 03:00 on 7 October &mdash; about four hours and eight minutes, during which users of workspace agents may not have received responses. Also resolved were degraded performance in Codex and Work mode, 17:21 to 18:23 on 7 October, and elevated errors with GPT-5.6 Instant in FedRAMP workspaces, 23:42 on 7 October to 00:03 on 8 October. Two further ChatGPT Work incidents and an APAC-region incident affecting ChatGPT conversations, Work and GPTs opened at 03:17 on 8 October; OpenAI published no root causes and no affected-user counts, and its timestamps carry no stated time zone, so we have not converted them.</div>
+      <div style="padding-top:10px;"><a href="https://status.openai.com/history" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+<!-- ===== MOVERS ===== -->
+    <tr>
+     <td style="padding:26px 26px 6px 26px;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;letter-spacing:1px;color:#0B1220;text-transform:uppercase;border-bottom:2px solid #0B1220;padding-bottom:6px;">Movers &mdash; From The Known Good</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:6px;line-height:1.5;">Blended 3:1 price per 1M tokens, from our own ingest of OpenRouter published pricing. 16 models moved across 43 logged legs in the 9 October window. <strong>None are printed.</strong> All sixteen are withheld, named below with the filter each one failed.</div>
+     </td>
+    </tr>
+    <tr>
+     <td style="padding:14px 26px 4px 26px;">
+      <table width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #e4e8ed;">
+       <tr bgcolor="#f2f5f8">
+        <td style="padding:8px 10px;font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:bold;color:#5a6472;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid #e4e8ed;">Model</td>
+        <td style="padding:8px 10px;font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:bold;color:#5a6472;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid #e4e8ed;">Metric</td>
+        <td align="right" style="padding:8px 10px;font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:bold;color:#5a6472;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid #e4e8ed;">Change</td>
+       </tr>
+       <tr>
+        <td style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#0B1220;border-bottom:1px solid #eef1f4;">No model cleared the filters today</td>
+        <td style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;border-bottom:1px solid #eef1f4;">all 16 withheld &mdash; see the note below</td>
+        <td align="right" style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#5a6472;border-bottom:1px solid #eef1f4;">&mdash;</td>
+       </tr>
+      </table>
+      <div style="padding-top:10px;"><a href="https://theknowngood.com/leaderboard" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">See the full leaderboard &rsaquo;</a></div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:10px;line-height:1.55;"><strong>This is the first morning the table has printed nothing.</strong> Sixteen models moved across 43 logged legs and every one of them failed a filter we published before today. The catalogue matcher read 16 of 16 models found, so this is not an ingest failure or a parsing miss &mdash; the moves are real and none of them is reportable. We would rather print an empty table than a number we cannot stand behind, and on a day like this the note is the whole product.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:10px;line-height:1.55;"><strong>Two corrections to yesterday&rsquo;s table.</strong> We published Qwen3 Next 80B A3B Instruct at $0.35 to $0.49, +39%, and NVIDIA Nemotron 3 Super at $0.17 to $0.16, &minus;5%, both on what read as single clean 8 October legs. This morning&rsquo;s changelog carries a second 8 October leg for each. Qwen3 Next now runs $0.35 to $0.49 to $0.34, a net of &minus;2.9% rather than +39%, and the catalogue now prices it at $0.35 blended, not $0.49. Nemotron 3 Super now runs $0.17 to $0.16 to $0.17, a round trip netting zero, and the catalogue puts it at $0.1725. Neither row should have passed our own derived-net rule and neither should have been printed. The other two hold exactly: Qwen3.5-27B remains a single leg at $0.54 to $0.84, +58%, catalogue $0.845; Nemotron 3 Nano 30B A3B remains a single leg at $0.09 to $0.10, +20%, catalogue $0.105. This is the second consecutive morning a printed row has gained a late second leg. The changelog carries dates but no timestamps, so our window keeps reaching back into the previous run, and we now expect to be correcting rather than hoping not to.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:10px;line-height:1.55;"><strong>Withheld because the net would have to be derived (7).</strong> Z.ai GLM Flash Latest ran eleven legs from $0.72 down to $0.19; DeepSeek V4 Flash Latest seven legs from $0.12 to $0.02, through $0.33 and a +687% leg on the way; Z.ai GLM 5.2 four legs from $0.96 to $1.54; Z.ai GLM 5.3 two legs, $0.88 to $1.78 to $1.23; MoonshotAI Kimi Latest two legs, $3.68 to $1.08 to $3.62; Qwen3.5-35B-A3B two legs, $0.36 to $0.45 to $0.25; and Z.ai GLM Latest two legs, $1.13 to $3.02 to $1.12. A multi-leg net has no published percentage and we will not manufacture one from prices the site displays rounded to two decimals.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:10px;line-height:1.55;"><strong>Withheld as round trips netting zero (2).</strong> DeepSeek V4 Pro 0813 ran $0.99 to $1.98 to $0.99 to $1.98 and back to $0.99 &mdash; four legs, two prices, +100% and &minus;50% alternating, and the catalogue confirms the close at exactly $0.99. That is the fourth consecutive day this model has offered a naive reader +100% on a flagship DeepSeek release and the fourth we have declined it. DeepSeek Flash Latest ran $0.31 to $0.16 to $0.31, also netting zero, catalogue $0.312.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:10px;line-height:1.55;"><strong>Withheld as two-value oscillators (3).</strong> Tencent Hy3 has logged 14 legs and has only ever held $0.14 and $0.23; today returns to $0.23 at +60%. Tencent Hy4 preview has logged 14 and has only ever held $1.13 and $1.25; today returns to $1.25 at +11%. Meta Llama 3.3 70B Instruct has logged 5 and has only ever held $0.16 and $0.29; today returns to $0.29 at +87%. None broke out to a price it has never held, which remains the only condition under which we print an oscillator.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:10px;line-height:1.55;"><strong>Withheld on a flap endpoint (3), including the row that came closest to print.</strong> Qwen3.6 27B moved $0.72 to $1.01 at +40% on a single clean leg, and the catalogue confirms the close at $1.0125 &mdash; every figure checks out. We are not printing it, because the identical $0.72 to $1.01 leg at +40% was logged yesterday and reversed to $0.72 the same day; today&rsquo;s window has caught the up-leg of a round trip we have already watched complete once. Google Gemma 4 26B A4B moved $0.12 to $0.14 at +18%, catalogue $0.1425, and is now a visible metronome: eleven legs since 2 October alternating $0.12 up to $0.14 and straight back down, every single day, with today&rsquo;s up-leg logged and the matching down-leg not yet. Fifth consecutive day withheld. DeepSeek V4 Pro 0423 posted the biggest number on the board at +233%, $0.36 to $1.19, and the catalogue appears to agree at $1.194075 &mdash; but $1.19 is precisely the price it hit and abandoned within yesterday&rsquo;s window, its chain opens at $0.36 where yesterday closed at $0.37, and the catalogue entry carrying that name still has the undated slug <strong>deepseek-deepseek-v4-pro</strong> while its 0813 sibling has a dated slug of its own, so we cannot establish the cross-check is reading the variant we think it is. Second consecutive day withheld.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:10px;line-height:1.55;"><strong>Withheld on a catalogue contradiction (1).</strong> MoonshotAI Kimi K3 moved $3.82 to $3.45 at &minus;10% on a single clean leg, but the catalogue prices it at $3.375 blended, built from $0.50 input and $12.00 output &mdash; a figure that would display as $3.38, not $3.45, and a gap of 7.5 cents against the 1.5-cent tolerance we allow for rounding. Its chain also opens at $3.82 when yesterday&rsquo;s legs closed at $3.99. A changelog endpoint that contradicts the catalogue is a withhold, not a rounding difference, so it stays out.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:10px;line-height:1.55;">Every percentage quoted above is the one the changelog published, never one we derived from the two-decimal prices on display. Where we give a catalogue figure it comes from the models.json blended 3:1 price, fetched this morning alongside the changelog.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#8a93a0;padding-top:8px;line-height:1.5;">Price data via OpenRouter. Benchmark data includes Epoch AI (CC BY). Catalogue and price history from <a href="https://theknowngood.com" style="color:#8a93a0;">The Known Good</a>, CC BY 4.0.</div>
+     </td>
+    </tr>
+
+<!-- ===== SKILL UP — FREE TRAINING ===== -->
+    <tr>
+     <td style="padding:26px 26px 6px 26px;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;letter-spacing:1px;color:#0B1220;text-transform:uppercase;border-bottom:2px solid #0B1220;padding-bottom:6px;">Skill Up &mdash; Free Training</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:6px;line-height:1.5;">Four free courses tied to today&rsquo;s threads. We fetch every page ourselves, read the sentence that states its own price and certificate terms, and drop anything we cannot label precisely. <strong>All four are labelled Free on the page&rsquo;s own wording</strong> &mdash; the two Linux Foundation pages state the price as &ldquo;$0&rdquo; with a digital badge in the includes list and name no certificate, and both Hugging Face courses say so in plain words, one that &ldquo;the certification process is completely free&rdquo; and one that it has no certification at all. <strong>Dropped today: Microsoft Learn&rsquo;s AI security fundamentals path</strong>, a good topical fit that states no price or certificate terms anywhere; Linux Foundation LFS183 on zero trust, which shows no price, duration or badge line; Cisco Networking Academy&rsquo;s ethical hacker course, still a JavaScript shell telling us to enable JavaScript; and Simplilearn&rsquo;s free AWS IAM course, which is the single best match to today&rsquo;s lead story and which we cannot run because it never says whether its AWS-powered completion certificate costs anything. <strong>Semiconductor advanced packaging has no free course we could verify at all</strong> &mdash; the nearest fit charges $396 &mdash; so that thread goes uncovered rather than stretched to fit. Not endorsements. We accept no payment for placement or coverage, and use no affiliate links.</div>
+     </td>
+    </tr>
+    <tr>
+     <td style="padding:14px 26px;border-bottom:1px solid #e4e8ed;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#0B1220;">Secure AI/ML-Driven Software Development (LFEL1012)</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding:2px 0 4px 0;">Linux Foundation &middot; Self-paced &middot; 60&ndash;90 minutes &middot; Beginner &middot; Free &mdash; digital badge included</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.5;">Seven chapters on the security risks that arrive once AI assistants and agents hold a role in the development loop: the risks of assistant use, secure-use practice, writing more secure code with AI, and reviewing AI-generated changes. The closest free, plainly-priced match to today&rsquo;s lead, where one prompt pivoted through the metadata service and a default execution role &mdash; it drills the habit of treating an agent&rsquo;s inputs as untrusted and its privileges as something to audit. Quizzes, 30 days of access.</div>
+      <div style="padding-top:8px;"><a href="https://training.linuxfoundation.org/express-learning/secure-ai-ml-driven-software-development-lfel1012/" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Open course &rsaquo;</a></div>
+     </td>
+    </tr>
+    <tr>
+     <td style="padding:14px 26px;border-bottom:1px solid #e4e8ed;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#0B1220;">Welcome to the AI Agents Course</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding:2px 0 4px 0;">Hugging Face &middot; Self-paced &middot; 3&ndash;4 hours per week across five units &middot; Beginner &middot; Free &mdash; certification process free</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.5;">How agents actually work: tools, the think-act-observe loop, three frameworks (smolagents, LlamaIndex, LangGraph), a unit on agentic RAG, and bonus units on function-calling and agent observability. Both of today&rsquo;s lead security stories read differently once you have built an agent yourself and seen exactly where a tool call, a retrieved document or an injected instruction enters the loop. This is the Agents course, not the MCP course we ran earlier this month.</div>
+      <div style="padding-top:8px;"><a href="https://huggingface.co/learn/agents-course/unit0/introduction" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Open course &rsaquo;</a></div>
+     </td>
+    </tr>
+    <tr>
+     <td style="padding:14px 26px;border-bottom:1px solid #e4e8ed;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#0B1220;">Getting Started with OpenTelemetry (LFS148)</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding:2px 0 4px 0;">Linux Foundation &middot; Self-paced &middot; 8&ndash;10 hours &middot; Beginner &middot; Free &mdash; digital badge included</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.5;">Eleven sections with five hands-on labs on instrumentation for traces, metrics and logs, and on building pipelines with the OpenTelemetry Collector. The direct answer to the 2,100 exposed DCGM exporters above: the Collector labs are where it becomes obvious that a metrics endpoint is a service like any other, needing an authenticated and deliberately scoped pipeline rather than an open port on the public internet. 90 days of access.</div>
+      <div style="padding-top:8px;"><a href="https://training.linuxfoundation.org/training/getting-started-with-opentelemetry-lfs148/" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Open course &rsaquo;</a></div>
+     </td>
+    </tr>
+    <tr>
+     <td style="padding:14px 26px;border-bottom:1px solid #e4e8ed;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#0B1220;">LLM Course</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding:2px 0 4px 0;">Hugging Face &middot; Self-paced &middot; 6&ndash;8 hours per week across thirteen chapters &middot; Beginner &middot; Free &mdash; no certification offered</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.5;">Transformer models and the Transformers, Datasets and Tokenizers libraries, from how models represent text through fine-tuning and dataset curation. For today&rsquo;s retrieval thread the relevant stop is chapter 5&rsquo;s semantic search section, which embeds text with a sentence-transformers checkpoint and queries it by nearest neighbours &mdash; the single-vector baseline that the late-interaction multi-vector retrievers now shipping are measured against. Free and ad-free; the FAQ states there is no certification for it.</div>
+      <div style="padding-top:8px;"><a href="https://huggingface.co/learn/llm-course/chapter1/1" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Open course &rsaquo;</a></div>
+     </td>
+    </tr>
+
+<!-- ===== FOOTER ===== -->
+    <tr>
+     <td bgcolor="#0B1220" style="padding:22px 26px;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#ffffff;letter-spacing:1.5px;">THE KNOWN <span style="color:#3DA5E0;">GOOD</span> NEWS</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#7d8b9c;padding-top:5px;letter-spacing:.5px;text-transform:uppercase;">Daily AI Intelligence Brief</div>
+      <div style="border-top:1px solid #1e2c3f;margin:16px 0 14px 0;font-size:0;line-height:0;">&nbsp;</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#7d8b9c;line-height:1.9;">
+       <a href="https://theknowngood.com" style="color:#a8b6c6;text-decoration:underline;">Unsubscribe</a>
+       <span style="color:#3c4b5f;">&nbsp;&middot;&nbsp;</span>
+       <a href="https://theknowngood.com/terms/" style="color:#a8b6c6;text-decoration:underline;">Terms of Use</a>
+       <span style="color:#3c4b5f;">&nbsp;&middot;&nbsp;</span>
+       <a href="https://theknowngood.com/privacy/" style="color:#a8b6c6;text-decoration:underline;">Privacy Policy</a>
+       <span style="color:#3c4b5f;">&nbsp;&middot;&nbsp;</span>
+       <a href="https://theknowngood.com" style="color:#a8b6c6;text-decoration:underline;">theknowngood.com</a>
+       <span style="color:#3c4b5f;">&nbsp;&middot;&nbsp;</span>
+       <a href="https://kkierii.github.io/TKG_News/archive/" style="color:#a8b6c6;text-decoration:underline;">Archive</a>
+      </div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#66748a;padding-top:12px;line-height:1.6;">
+       You are receiving this because you subscribed at theknowngood.com.
+      </div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#4f5d70;padding-top:10px;line-height:1.6;">
+       The Known Good aggregates publicly published benchmark data. We do not run our own evaluations.
+       External links are not endorsements and we accept no payment for placement or coverage.
+      </div>
+     </td>
+    </tr>
+
+   </table>
+  </td>
+ </tr>
+</table>
+</body></html>
