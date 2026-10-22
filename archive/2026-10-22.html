@@ -1,0 +1,239 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The Known Good News — October 22, 2026</title><meta name="description" content="The Known Good News for Thursday, October 22, 2026: A trojanised LiteLLM 1.107.0 was live on PyPI and Docker Hub for hours, built with stolen GitHub tokens"></head><body style="margin:0;background:#eef1f4;">
+<!--
+  THE KNOWN GOOD NEWS — LOCKED TEMPLATE v1
+  640px table layout, inline CSS, email-safe. Masthead = hosted PNG banner.
+  Daily generation swaps content only. Do not change layout, colors, or fonts.
+-->
+<table width="100%" cellpadding="0" cellspacing="0" style="margin:0;padding:0;">
+ <tr>
+  <td align="center" bgcolor="#eef1f4" style="padding:18px 10px;">
+
+   <table width="640" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="width:640px;max-width:640px;border:1px solid #d5dae0;">
+
+    <!-- ===== MASTHEAD ===== -->
+    <tr>
+     <td bgcolor="#0B1220" style="padding:0;font-size:0;line-height:0;">
+      <img src="https://raw.githubusercontent.com/kkierii/TKG_News/main/images/TKG_Banner.png" width="640" alt="The Known Good News — daily AI intelligence brief covering models, AI security, policy, chips and infrastructure, research, and incidents" style="display:block;width:100%;max-width:640px;height:auto;border:0;" />
+     </td>
+    </tr>
+
+    <!-- ===== DATE BAR + EDITOR NOTE ===== -->
+    <tr>
+     <td bgcolor="#f2f5f8" style="padding:11px 26px;border-top:3px solid #0271B8;border-bottom:1px solid #dde3e9;">
+      <table width="100%" cellpadding="0" cellspacing="0">
+       <tr>
+        <td style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0B1220;">Thursday, October 22, 2026</td>
+        <td align="right" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#5a6472;">Daily Edition</td>
+       </tr>
+      </table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;padding-top:6px;">Three threads today: the AI gateway in your stack shipped a credential stealer, attackers of every grade are now running agent frameworks as standard kit, and the same models are finding the bugs faster than the patch notes can name versions.</div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:26px 26px 6px 26px;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;letter-spacing:1px;color:#0B1220;text-transform:uppercase;border-bottom:2px solid #0B1220;padding-bottom:6px;">Featured</div>
+     </td>
+    </tr>
+
+    <tr>
+     <td bgcolor="#f4f7fa" style="padding:14px 26px 22px 26px;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#0271B8" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Breaking</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:19px;font-weight:bold;color:#0B1220;line-height:1.3;padding:10px 0 4px 0;">A trojanised LiteLLM 1.107.0 was live on PyPI and Docker Hub for hours, built with stolen GitHub tokens</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:8px;">LiteLLM security incident report &middot; 21 October 2026</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#2b3138;line-height:1.55;padding-bottom:9px;">LiteLLM says malicious 1.107.0 wheels were live on PyPI from 11:39:51 to 13:23 UTC on 21 October, and that four Docker Hub tags, including latest, pointed at a compromised image until 14:20 UTC. The artifacts were built from an attacker-controlled repository using stolen GitHub CLI OAuth tokens acting through three engineers&rsquo; accounts, and they drop cook.pth and sitecustomize.py so the payload runs every time Python starts. Wiz says the stealer harvests across 16 modules, including AI service keys, and that stolen AWS credentials were in use about 4.5 hours after exfiltration. LiteLLM&rsquo;s advice is to pin to 1.106.2 and rotate every key the affected hosts could reach.</div>
+      <div style="padding-top:12px;"><a href="https://docs.litellm.ai/blog/security-incident-oct-21-2026" style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#0271B8;text-decoration:none;">Read the incident report &rsaquo;</a></div>
+      <div style="padding-top:14px;margin-top:12px;border-top:1px solid #dde3e9;font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#5a6472;line-height:1.6;">Related from Field Notes &middot; <a href="https://blog.theknowngood.com/huggingface-breach-dataset-pipeline" style="color:#0271B8;text-decoration:none;font-weight:bold;">Hugging Face Wasn&rsquo;t the Target. It Was in the Way. &rsaquo;</a></div>
+     </td>
+    </tr>
+
+<!-- ===== THE BRIEF ===== -->
+    <tr>
+     <td style="padding:26px 26px 6px 26px;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;letter-spacing:1px;color:#0B1220;text-transform:uppercase;border-bottom:2px solid #0B1220;padding-bottom:6px;">The Brief</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:6px;line-height:1.5;">Models &amp; Releases &middot; AI Security &middot; Policy &amp; Regulation &middot; Chips &amp; Infrastructure &middot; Research &middot; Incidents</div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">AI Security</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">Microsoft ties the ConnectWise Cloud Backup compromise to Storm-0940 and an open-source agentic pentest framework</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">Microsoft Security Blog &middot; 21 October 2026</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">Microsoft attributes the ConnectWise Cloud Backup supply-chain compromise to Storm-0940, which it describes as a China-state aligned actor active since 2021, using ARTEX, an open-source multi-agent LLM penetration-testing framework. A password spray from 10 to 14 October hit 327 accounts at eight organisations with more than 151,000 failed logons, peaking at 2,900 a minute on 11 October, and Microsoft observed no successful authentication from it. The actor then used ConnectWise application credentials to attempt sign-ins to more than 2,250 tenants and modified application credentials to establish persistence. Microsoft says the activity did not result from a compromise of, or a vulnerability in, its own systems, products or services.</div>
+      <div style="padding-top:10px;"><a href="https://www.microsoft.com/en-us/security/blog/2026/10/21/storm-0940-uses-artex-agentic-ai-connectwise-supply-chain-compromise/" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">AI Security</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">Wiz discloses two PHP use-after-free flaws reaching CVSS 9.2, found with AI models and patched on 21 October</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">Wiz &middot; 21 October 2026</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">Wiz disclosed CVE-2026-109618, an upload-progress unserializer use-after-free, and CVE-2026-109619, a fatal-error backtrace use-after-free, with severity reaching CVSS 9.2 and affected versions going back to PHP 5.4. It says it found and validated them with its Atlas tool using Gemini 4 Argon and GPT-5.6 Sol, and demonstrated pre-authentication RCE on WordPress, Drupal and Joomla with the first flaw. OpenAI says Calif identified one of the flaws using GPT-5.6 Sol, that Wiz independently found both, and that it has committed $1 billion in subsidised Daybreak access for defenders. Neither page lists fixed version numbers; PHP released the patch on 21 October.</div>
+      <div style="padding-top:10px;"><a href="https://www.wiz.io/blog/php2shell-php-rce" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Research</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">Microsoft Research says human-directed AI agents helped prove the 31-year-old KLS conjecture</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">Microsoft Research Blog &middot; 21 October 2026</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">Xinzhi Zhang of Microsoft Research and co-author Zhao Song have proved the 1995 Kannan&ndash;Lov&aacute;sz&ndash;Simonovits conjecture in the preprint &ldquo;An O(1) Bound for the KLS Constant&rdquo; (arXiv 2610.01447). AI agents explored more than 100 candidate approaches while the researchers eliminated unpromising directions, assembled the final argument and verified it; repeated unguided attempts with several leading models on a similar token budget fell short. Two further independent proofs, arXiv 2610.05474 and 2610.07728, have since appeared. The authors say they have verified a streamlined argument in Lean and will release it after final review, and none of the papers is yet peer-reviewed.</div>
+      <div style="padding-top:10px;"><a href="https://www.microsoft.com/en-us/research/blog/solving-a-31-year-old-grand-challenge-in-mathematics-the-kls-conjecture/" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Incidents</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">Exposed servers show ransomware affiliates ran 133 OpenCode agent sessions through OpenRouter</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">SOCRadar &middot; 20 October 2026</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">SOCRadar found seven exposed servers tied to affiliates of the INC Ransomware and The Gentlemen operations, holding 8,257 messages across 133 OpenCode sessions routed through OpenRouter, using models including anthropic/claude-opus-4.6 and moonshotai/kimi-k3. The records include 46 INC encryptor builds prepared for six victims and name 62 organisations, 36 of them in the United States. SOCRadar puts the operators&rsquo; recorded AI spend above $23,000; its key takeaways give $23,920. Exploitation claims in the logs, including FortiClient EMS CVE-2026-35616, are the operators&rsquo; own and are reported rather than independently confirmed.</div>
+      <div style="padding-top:10px;"><a href="https://socradar.io/blog/inc-gentlemen-ransomware-ai-infrastructure/" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Models &amp; Releases</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">Anthropic opens a waitlisted research preview of Claude Duet, a background agent app built on Claude Opus 5.5</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">Anthropic &middot; 21 October 2026</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">Claude Duet is a standalone app on iOS, Android and claude.ai that checks connected accounts every few hours and works in the background on a virtual machine with its own browser. Access is by waitlist, starting with US Pro and Max subscribers, and it can draw on more than 6,000 connectors and plugins. It waits for the user&rsquo;s approval before sending messages, making payments, signing or deleting, and trading securities or moving money between accounts are off-limits even with approval. Anthropic describes it as an early version that may misjudge urgency.</div>
+      <div style="padding-top:10px;"><a href="https://claude.com/resources/articles/claude-duet" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Chips &amp; Infrastructure</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">Humain expands its Nvidia deployment to up to 84MW, about 27,000 GPUs, in two phases</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">The National &middot; 22 October 2026</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">Saudi Arabia&rsquo;s Humain, owned by the Public Investment Fund, widened its Nvidia partnership at GTC Berlin to up to 84 megawatts and about 27,000 GPUs. Phase one is 14MW of Blackwell HGX B300 systems, equivalent to 6,000 GPUs, deploying from the fourth quarter; phase two is 70MW of Vera Rubin, about 21,000 GPUs, planned from mid-2027, with 50MW for an unnamed US client and 20MW for Humain Cloud. It builds on a May 2025 agreement for up to 500MW over five years. Humain targets about 3GW of data-centre capacity by 2030 and more than 6GW by 2034.</div>
+      <div style="padding-top:10px;"><a href="https://www.thenationalnews.com/future/technology/2026/10/22/saudi-arabias-humain-expands-nvidia-deal-with-84mw-ai-computing-plan/" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Policy &amp; Regulation</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">Trump says data-centre developers should pay communities a &ldquo;dividend&rdquo; as a poll finds 72% opposition</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">Al Jazeera &middot; 21 October 2026</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">In a Truth Social post on 21 October, President Trump said data-centre companies should pay the community, and/or individuals within it, a &ldquo;dividend&rdquo;, adding &ldquo;MAKE DEALS, and get them built!!!&rdquo;. The post comes ahead of the 3 November midterms, as several Republican Senate candidates call for tighter oversight of data centres. An ABC News/Washington Post/Ipsos poll released the same day found 72% of respondents opposed building new data centres in their communities. It is a statement of position, not an order or a rule.</div>
+      <div style="padding-top:10px;"><a href="https://aljazeera.com/news/2026/10/21/trump-says-ai-data-centres-should-pay-dividends-in-pre-midterm-shift" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+    <tr>
+     <td style="padding:16px 26px;border-bottom:1px solid #e4e8ed;">
+      <table cellpadding="0" cellspacing="0" style="display:inline-block;"><tr><td bgcolor="#46586e" style="padding:3px 8px;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#ffffff;text-transform:uppercase;letter-spacing:.5px;">Models &amp; Releases</td></tr></table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0B1220;line-height:1.35;padding:8px 0 3px 0;">Recursive releases Flint, an Apache 2.0 coding model with about 2.5B active parameters aimed at laptops</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding-bottom:6px;">Recursive model card on Hugging Face &middot; released 21 October 2026</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.55;">Flint is Recursive&rsquo;s first model, a mixture-of-experts with 39.8 billion total parameters and about 2.5 billion active per token, released under Apache 2.0. The model card gives a 262,144-token context, while the launch blog says up to 512k with 256k recommended, and Recursive says it runs at more than 125 tokens a second on an M4 Pro MacBook Pro at short contexts. Its self-reported scores are 74.2% on SWE-bench Verified and 54.9% on Terminal-Bench 2.1, with no independent reproduction yet. Recursive&rsquo;s blog carries no date; press coverage dates the release to 21 October.</div>
+      <div style="padding-top:10px;"><a href="https://huggingface.co/RecursiveSI/flint" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Continue &rsaquo;</a></div>
+     </td>
+    </tr>
+
+<!-- ===== MOVERS ===== -->
+    <tr>
+     <td style="padding:26px 26px 6px 26px;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;letter-spacing:1px;color:#0B1220;text-transform:uppercase;border-bottom:2px solid #0B1220;padding-bottom:6px;">Movers &mdash; From The Known Good</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:6px;line-height:1.5;">Blended 3:1 price per 1M tokens, from our own ingest of OpenRouter published pricing. The window is 21 to 22 October: yesterday&rsquo;s run read the feed at 07:41 Pacific, so legs logged later on 21 October were never reported. Twenty-three models moved across 104 logged legs, out of 360 in the whole feed. None cleared every filter today, so the table prints no rows; all twenty-three are named in the note with the filter they failed.</div>
+     </td>
+    </tr>
+    <tr>
+     <td style="padding:14px 26px 4px 26px;">
+      <table width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #e4e8ed;">
+       <tr bgcolor="#f2f5f8">
+        <td style="padding:8px 10px;font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:bold;color:#5a6472;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid #e4e8ed;">Model</td>
+        <td style="padding:8px 10px;font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:bold;color:#5a6472;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid #e4e8ed;">Metric</td>
+        <td align="right" style="padding:8px 10px;font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:bold;color:#5a6472;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid #e4e8ed;">Change</td>
+       </tr>
+       <tr>
+        <td style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#0B1220;border-bottom:1px solid #eef1f4;">No model cleared the filters today</td>
+        <td style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;border-bottom:1px solid #eef1f4;">all 23 withheld &mdash; see the note below</td>
+        <td align="right" style="padding:9px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#5a6472;border-bottom:1px solid #eef1f4;">&mdash;</td>
+       </tr>
+      </table>
+      <div style="padding-top:10px;"><a href="https://theknowngood.com/leaderboard" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">See the full leaderboard &rsaquo;</a></div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:10px;line-height:1.55;">An empty table is the honest result this morning, not a fault in the feed. Every model that moved either moved more than once, landed back on a price it had already held, contradicts the catalogue, or was printed yesterday. We print a row only when one clean leg carries the site&rsquo;s own headline percentage and closes on a price the catalogue confirms; a figure we would have to compute ourselves from rounded prices is not one we will put in a table.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:10px;line-height:1.55;">Already reported (6). Xiaomi MiMo-V2.5, Xiaomi MiMo-V2.5-Pro, Z.ai GLM 5.2, Z.ai GLM 5.1 and Qwen Qwen3.5-9B are the same 21 October legs printed yesterday. Qwen Qwen3.5 397B A17B logged a single clean-looking +45% leg today, $0.88 to $1.28, with the catalogue agreeing at $1.275 &mdash; but it was printed on 20 October and its whole history is those two values, so the oscillator and flap-endpoint filters fire as well.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:10px;line-height:1.55;">Derived net, no single site headline percentage (17): Z.ai GLM 5.3 Flash (17 legs in window), Z.ai GLM Flash Latest (16), MoonshotAI Kimi Latest (10), DeepSeek V4.1 Flash (9), DeepSeek V4.1 Flash 1017 (7), DeepSeek Flash Latest (5), DeepSeek Pro Latest (4), DeepSeek V4 Flash Latest (4), DeepSeek V4 Pro 0813 (3), DeepSeek V4 Pro 0423 (3), DeepSeek V4 Flash 0731 (3), Google Gemma 4 26B A4B (3), Tencent Hy4 preview (3), Tencent Hy3 (3), Qwen Qwen3.5-122B-A10B (3), NVIDIA Nemotron 3 Super (3) and Z.ai GLM 5.3 (2). Two are round trips that net to exactly zero: DeepSeek Flash Latest and GLM 5.3. Seven are oscillators with no breakout to an unheld price: DeepSeek V4 Pro 0813 ($0.99/$1.98), DeepSeek V4.1 Flash 1017 ($0.26/$0.52, seven times in this window), Tencent Hy4 preview ($1.13/$1.25), Tencent Hy3 ($0.14/$0.23), Qwen3.5-122B-A10B ($0.72/$1.10), Nemotron 3 Super ($0.17/$0.82) and the Qwen3.5 397B row above.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:10px;line-height:1.55;">Three are worth naming on their own. DeepSeek Pro Latest closes the window at $2.10 while the catalogue prices it at $2.1676 blended, so it is withheld as a catalogue contradiction, not a rounding difference. DeepSeek V4.1 Flash is the biggest number not printed: nine legs carry it from $0.05 to $0.52, matching the catalogue&rsquo;s $0.525, but that net exists only as our own arithmetic across legs the site published separately. And GLM 5.3 Flash shows the rounding trap in miniature: one 22 October leg reads +7% while both displayed prices round to $0.05, which is why we never derive a percentage from the figures shown beside it.</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#8a93a0;padding-top:8px;line-height:1.5;">Price data via OpenRouter, ingested and blended by The Known Good. Benchmark data on the site includes Epoch AI (CC BY). Movers and leaderboard data from The Known Good (https://theknowngood.com), CC BY 4.0.</div>
+     </td>
+    </tr>
+
+<!-- ===== SKILL UP — FREE TRAINING ===== -->
+    <tr>
+     <td style="padding:26px 26px 6px 26px;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;letter-spacing:1px;color:#0B1220;text-transform:uppercase;border-bottom:2px solid #0B1220;padding-bottom:6px;">Skill Up &mdash; Free Training</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6f7a86;padding-top:6px;line-height:1.5;">Four courses tied to today&rsquo;s stories, each checked this morning. We open every enrolment page and read the pricing and certificate terms before labelling it; anything whose terms we cannot read, we drop. Not endorsements. We accept no payment for placement or coverage, and use no affiliate links.</div>
+     </td>
+    </tr>
+    <tr>
+     <td style="padding:14px 26px;border-bottom:1px solid #e4e8ed;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#0B1220;">OWASP Top 10 risks for open source software</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding:2px 0 4px 0;">Snyk Learn &middot; Online, self-paced learning path &middot; 10 lessons, about 2.5 hours estimated &middot; Free &mdash; the course data marks it free to access and awards a Snyk Learn Certificate, and the plan page lists quizzes and certificates in the Free plan</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.5;">Lessons include compromise of a legitimate package, name confusion attacks and unapproved change, which is the category the LiteLLM incident falls into: a real package, a real publisher account, a malicious release. One caveat we would rather print: the Free label rests on the course&rsquo;s structured data and the provider&rsquo;s plan page together, because the course page itself does not spell out the certificate terms in prose.</div>
+      <div style="padding-top:8px;"><a href="https://learn.snyk.io/learning-paths/owasp-top-10-open-source-software-risks/" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Open course &rsaquo;</a></div>
+     </td>
+    </tr>
+    <tr>
+     <td style="padding:14px 26px;border-bottom:1px solid #e4e8ed;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#0B1220;">Web Security Academy</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding:2px 0 4px 0;">PortSwigger &middot; Online, self-paced, interactive labs &middot; Free audit (certificate paid) &mdash; the academy is described as a free online training centre, while the Burp Suite Certified Practitioner exam requires a purchased exam credit and an active Burp Suite Professional subscription</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.5;">Hands-on labs across the web vulnerability classes that turn a server-side flaw into a working exploit against a CMS-style application, the shape of today&rsquo;s PHP2Shell disclosure on WordPress, Drupal and Joomla. It teaches web-application attack surface rather than PHP memory internals, so it frames the disclosure rather than reproducing it.</div>
+      <div style="padding-top:8px;"><a href="https://portswigger.net/web-security" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Open course &rsaquo;</a></div>
+     </td>
+    </tr>
+    <tr>
+     <td style="padding:14px 26px;border-bottom:1px solid #e4e8ed;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#0B1220;">Model Context Protocol (MCP) Course</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding:2px 0 4px 0;">Hugging Face &middot; Online, self-paced, about 3&ndash;4 hours a week &middot; Assumes basic LLM concepts and Python or TypeScript &middot; Free &mdash; the course calls itself free and its certification page states &ldquo;The certification process is completely free&rdquo;</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.5;">MCP fundamentals and architecture, then building and deploying an end-to-end MCP application: the plumbing that lets agents such as Claude Duet reach thousands of connectors, and the trust boundary every one of those connectors adds. Two free certificates are offered, one for the fundamentals unit and one for completion; the page mentions a certificate deadline without giving the date.</div>
+      <div style="padding-top:8px;"><a href="https://huggingface.co/learn/mcp-course/unit0/introduction" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Open course &rsaquo;</a></div>
+     </td>
+    </tr>
+    <tr>
+     <td style="padding:14px 26px;border-bottom:1px solid #e4e8ed;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#0B1220;">18.S997 High-Dimensional Statistics</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#5a6472;padding:2px 0 4px 0;">MIT OpenCourseWare &middot; Graduate level, lecture notes and problem sets &middot; Free &mdash; openly licensed under CC BY-NC-SA 4.0 and downloadable; no certificate is offered</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2b3138;line-height:1.5;">Opens with sub-Gaussian random variables and concentration before moving to regression, matrix estimation and minimax lower bounds, which is the probabilistic toolkit behind the KLS result. It does not cover convex geometry or KLS itself, and it assumes real analysis, linear algebra and probability, so it is the serious entry point rather than a gentle one.</div>
+      <div style="padding-top:8px;"><a href="https://ocw.mit.edu/courses/18-s997-high-dimensional-statistics-spring-2015/" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#0271B8;text-decoration:none;">Open course &rsaquo;</a></div>
+     </td>
+    </tr>
+
+<!-- ===== FOOTER ===== -->
+    <tr>
+     <td bgcolor="#0B1220" style="padding:22px 26px;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#ffffff;letter-spacing:1.5px;">THE KNOWN <span style="color:#3DA5E0;">GOOD</span> NEWS</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#7d8b9c;padding-top:5px;letter-spacing:.5px;text-transform:uppercase;">Daily AI Intelligence Brief</div>
+      <div style="border-top:1px solid #1e2c3f;margin:16px 0 14px 0;font-size:0;line-height:0;">&nbsp;</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#7d8b9c;line-height:1.9;">
+       <a href="https://theknowngood.com" style="color:#a8b6c6;text-decoration:underline;">Unsubscribe</a>
+       <span style="color:#3c4b5f;">&nbsp;&middot;&nbsp;</span>
+       <a href="https://theknowngood.com/terms/" style="color:#a8b6c6;text-decoration:underline;">Terms of Use</a>
+       <span style="color:#3c4b5f;">&nbsp;&middot;&nbsp;</span>
+       <a href="https://theknowngood.com/privacy/" style="color:#a8b6c6;text-decoration:underline;">Privacy Policy</a>
+       <span style="color:#3c4b5f;">&nbsp;&middot;&nbsp;</span>
+       <a href="https://theknowngood.com" style="color:#a8b6c6;text-decoration:underline;">theknowngood.com</a>
+       <span style="color:#3c4b5f;">&nbsp;&middot;&nbsp;</span>
+       <a href="https://kkierii.github.io/TKG_News/archive/" style="color:#a8b6c6;text-decoration:underline;">Archive</a>
+      </div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#66748a;padding-top:12px;line-height:1.6;">
+       You are receiving this because you subscribed at theknowngood.com.
+      </div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#4f5d70;padding-top:10px;line-height:1.6;">
+       The Known Good aggregates publicly published benchmark data. We do not run our own evaluations.
+       External links are not endorsements and we accept no payment for placement or coverage.
+      </div>
+     </td>
+    </tr>
+
+   </table>
+  </td>
+ </tr>
+</table>
+</body></html>
